@@ -50,18 +50,19 @@
 
 # GULP
 ## all the below commands are used for gulp clean,build,run!
-- > gulp clear:project <br />
-- > gulp build <br />
-- > gulp <br />
-
+```text
+- c:\>gulp clear:project <br />
+- c:\> gulp build <br />
+- c:\> gulp <br />
+```
 
 
 # SETUP GIT CREDENTIALS
 ## Set your credential for avoid typeing username and paswrd again and again while push or pull!
 To start you should first add your credentials to git global store to avoid again and again typing your password. <br />
- > git config --global credential.helper store <br />
- > git config --global user.email "you@example.com" <br />
- > git config --global user.name "Your Name" <br />
+ - c:\> git config --global credential.helper store <br />
+ - c:\> git config --global user.email "you@example.com" <br />
+ - c:\> git config --global user.name "Your Name" <br />
 
  #### Modules & Packages
 
