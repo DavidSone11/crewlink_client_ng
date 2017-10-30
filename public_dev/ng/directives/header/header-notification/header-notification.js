@@ -9,7 +9,7 @@
 angular.module('crewLinkNgApp')
 	.directive('headerNotification',function(){
 		return {
-        templateUrl:'scripts/directives/header/header-notification/header-notification.html',
+        templateUrl:'ng/directives/header/header-notification/header-notification.html',
         restrict: 'E',
         replace: true,
     	}

@@ -10,7 +10,7 @@
 angular.module('crewLinkNgApp')
   .directive('sidebarSearch',function() {
     return {
-      templateUrl:'scripts/directives/sidebar/sidebar-search/sidebar-search.html',
+      templateUrl:'ng/directives/sidebar/sidebar-search/sidebar-search.html',
       restrict: 'E',
       replace: true,
       scope: {

@@ -9,7 +9,7 @@
 angular.module('crewLinkNgApp')
     .directive('stats',function() {
     	return {
-  		templateUrl:'scripts/directives/dashboard/stats/stats.html',
+  		templateUrl:'ng/directives/dashboard/stats/stats.html',
   		restrict:'E',
   		replace:true,
   		scope: {

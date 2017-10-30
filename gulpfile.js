@@ -192,7 +192,7 @@ gulp.task('watch', function () {
     gulp.watch(['public_dev/coffee/**/*.coffee'], ['build-coffee']);
     gulp.watch(['public_dev/images/**/*.*'], ['build-images']);
     gulp.watch(['public_dev/images/svg/**/*.svg'], ['build-svg']);
-    gulp.watch('public_dev/ng/**/*', ['ng']);
+    gulp.watch('public_dev/ng/**/*', ['build-ng']);
     gulp.watch('public_dev/**/*', connect.reload);
 });
 

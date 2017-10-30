@@ -9,7 +9,7 @@
 angular.module('crewLinkNgApp')
 	.directive('chat',function(){
 		return {
-        templateUrl:'scripts/directives/chat/chat.html',
+        templateUrl:'ng/directives/chat/chat.html',
         restrict: 'E',
         replace: true,
     	}

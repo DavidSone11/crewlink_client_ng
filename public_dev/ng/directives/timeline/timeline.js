@@ -9,7 +9,7 @@
 angular.module('crewLinkNgApp')
 	.directive('timeline',function() {
     return {
-        templateUrl:'scripts/directives/timeline/timeline.html',
+        templateUrl:'ng/directives/timeline/timeline.html',
         restrict: 'E',
         replace: true,
     }

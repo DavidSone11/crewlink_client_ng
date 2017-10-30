@@ -9,7 +9,7 @@
 angular.module('crewLinkNgApp')
 	.directive('notifications',function(){
 		return {
-        templateUrl:'scripts/directives/notifications/notifications.html',
+        templateUrl:'ng/directives/notifications/notifications.html',
         restrict: 'E',
         replace: true,
     	}

@@ -10,7 +10,7 @@
 angular.module('crewLinkNgApp')
   .directive('sidebar',['$location',function() {
     return {
-      templateUrl:'scripts/directives/sidebar/sidebar.html',
+      templateUrl:'ng/directives/sidebar/sidebar.html',
       restrict: 'E',
       replace: true,
       scope: {

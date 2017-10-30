@@ -9,7 +9,7 @@
 angular.module('crewLinkNgApp')
 	.directive('header',function(){
 		return {
-        templateUrl:'scripts/directives/header/header.html',
+        templateUrl:'ng/directives/header/header.html',
         restrict: 'E',
         replace: true,
     	}
