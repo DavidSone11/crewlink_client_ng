@@ -1,6 +1,6 @@
 
 <p align="center">
-<b><h2>CREWLINK_CLIENT_NG</h2></b><br>
+<b> CREWLINK_CLIENT_NG </b><br>
 </p>
 
 # GIT CLONE PROCESS
