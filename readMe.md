@@ -1,7 +1,8 @@
-## gulp run
-    <p> > gulp clear:project <br />
-    <p> > gulp build <br />
-    <p> > gulp <br />
+# GULP
+## all the below commands are used for gulp clean,build,run!
+* > gulp clear:project <br />
+* > gulp build <br />
+* > gulp <br />
 
 
 
