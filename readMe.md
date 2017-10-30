@@ -64,3 +64,16 @@ To start you should first add your credentials to git global store to avoid agai
  > git config --global user.name "Your Name" <br />
 
  #### Modules & Packages
+
+
+**Note:**
+If you get this following error, 
+```text
+Error: EACCES, permission denied '.config/configstore/insight-bower.yml'
+You don't have access to this file.
+```
+changing ownner .config
+
+```sh
+sudo chown -R [user name] ~/.config
+```
