@@ -16,6 +16,8 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     coffee = require('gulp-coffee'),
     svgmin = require('gulp-svgmin'),
+    autoprefixer = require('gulp-autoprefixer'),
+    rename = require('gulp-rename'),
     clean = require('gulp-clean');
 
 /**
@@ -45,8 +47,10 @@ gulp.task('build-cache', function (done) {
 // Copy all js files
 gulp.task('build-js', function () {
     gulp.src('public_dev/js/**/*.js')
+        .pipe(gulp_sourcemaps.init())  /// use to map all *.js files to public_development
         .pipe(minifyjs())
         .pipe(concat('main.min.js'))
+        .pipe(gulp_sourcemaps.write('.'))
         .pipe(gulp.dest('public/javascripts/'));
 });
 
@@ -68,10 +72,12 @@ gulp.task('build-css', function () {
     return gulp.src('public_dev/css/**/*.css')
         .pipe(gulp_sourcemaps.init())
         .pipe(cssnano())
+        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9'))
         .pipe(concat('style.min.css'))
+        //.pipe(rename('style.min.css'))
         .pipe(gulp_sourcemaps.write('.'))
-        .pipe(gulp.dest('public/stylesheets/'))
-        .pipe(connect.reload());
+        .pipe(gulp.dest('public/stylesheets/'));
+        //.pipe(connect.reload());
 });
 
 
