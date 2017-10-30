@@ -60,9 +60,9 @@ e:\WORKSPACE_NODEJS_V.1.0.0\crewlink_client_ng> gulp
 # SETUP GIT CREDENTIALS
 ## Set your credential for avoid typeing username and paswrd again and again while push or pull!
 To start you should first add your credentials to git global store to avoid again and again typing your password. <br />
- - c:\> git config --global credential.helper store <br />
- - c:\> git config --global user.email "you@example.com" <br />
- - c:\> git config --global user.name "Your Name" <br />
+ - E:\WORKSPACE_NODEJS_V.1.0.0\crewlink_client_ng> git config --global credential.helper store <br />
+ - E:\WORKSPACE_NODEJS_V.1.0.0\crewlink_client_ng> git config --global user.email "you@example.com" <br />
+ - E:\WORKSPACE_NODEJS_V.1.0.0\crewlink_client_ng> git config --global user.name "Your Name" <br />
 
  #### Modules & Packages
 
