@@ -1,6 +1,6 @@
 
 <p align="center">
-<b><h1><u>CREWLINK_CLIENT_NG</u></h1></b><br>
+<b><h1>CREWLINK_CLIENT_NG</h1></b><br>
 </p>
 
 # GIT CLONE PROCESS
@@ -24,7 +24,7 @@
 
 
 
-#SETUP GIT CREDENTIALS
+# SETUP GIT CREDENTIALS
 ## Set your credential for avoid typeing username and paswrd again and again while push or pull!
 To start you should first add your credentials to git global store to avoid again and again typing your password. <br />
  > git config --global credential.helper store <br />
