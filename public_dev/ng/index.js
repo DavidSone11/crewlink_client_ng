@@ -26,7 +26,7 @@ angular
     $stateProvider
       .state('dashboard', {
         url:'/dashboard',
-        templateUrl: 'ng/directives/dashboard1/main.html',
+        templateUrl: 'ng/directives/dashboard/dashboard.tmpl.html',
         resolve: {
             loadMyDirectives:function($ocLazyLoad){
                 return $ocLazyLoad.load(
@@ -77,7 +77,7 @@ angular
       .state('dashboard.home',{
         url:'/home',
         controller: 'MainCtrl',
-        templateUrl:'ng/directives/dashboard1/home.html',
+        templateUrl:'ng/directives/home/home.tmpl.html',
         resolve: {
           loadMyFiles:function($ocLazyLoad) {
             return $ocLazyLoad.load({
