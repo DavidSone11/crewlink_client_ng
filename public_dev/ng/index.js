@@ -33,10 +33,10 @@ angular
                 {
                     name:'crewLinkNgApp',
                     files:[
-                    'scripts/directives/header/header.js',
-                    'scripts/directives/header/header-notification/header-notification.js',
-                    'scripts/directives/sidebar/sidebar.js',
-                    'scripts/directives/sidebar/sidebar-search/sidebar-search.js'
+                    'ng/directives/header/header.js',
+                    'ng/directives/header/header-notification/header-notification.js',
+                    'ng/directives/sidebar/sidebar.js',
+                    'ng/directives/sidebar/sidebar-search/sidebar-search.js'
                     ]
                 }),
                 $ocLazyLoad.load(
@@ -83,11 +83,11 @@ angular
             return $ocLazyLoad.load({
               name:'crewLinkNgApp',
               files:[
-              'scripts/controllers/main.js',
-              'scripts/directives/timeline/timeline.js',
-              'scripts/directives/notifications/notifications.js',
-              'scripts/directives/chat/chat.js',
-              'scripts/directives/dashboard/stats/stats.js'
+              'ng/controllers/main.js',
+              'ng/directives/timeline/timeline.js',
+              'ng/directives/notifications/notifications.js',
+              'ng/directives/chat/chat.js',
+              'ng/directives/dashboard/stats/stats.js'
               ]
             })
           }
