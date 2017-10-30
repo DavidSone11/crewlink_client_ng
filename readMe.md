@@ -1,5 +1,5 @@
 
-<p align="center" style="color:green">
+<p align="center">
 <b><h1><u>CREWLINK_CLIENT_NG</h1></u></b><br>
 </p>
 
