@@ -3,7 +3,7 @@
 
 <pre>
   <p align="center">
-<b> CREWLINK_CLIENT_NG </b></br>
+<b> <h2> CREWLINK_CLIENT_NG </h2></b></br>
 <a href="#">www.crewlink_client_ng.com</a> |
 <a href="#">www.crewlink_client_ng.com</a> |
 <a href="#">www.crewlink_client_ng.com</a>
@@ -13,7 +13,7 @@
 
 
 
-
+<pre>
 <p>
 <img src="http://webmpires.net/media/blogs/blog/quick-uploads/p36/banner-angularjs.jpg?mtime=1466611958" width="200" height="200"> |
 <img src="https://www.codingmart.com/uploads/post/image/5811921c8ca7854ce4d6d5c6/angular2.png" width="200" height="200"> |
@@ -26,6 +26,7 @@
 <img src="http://backbonejs.org/docs/images/backbone.png" width="200" height="200"> |
 <img src="http://emberjs.com/images/tomster-twitter-card.png" width="200" height="200"> |
 </p>
+</pre>
 
 # GIT CLONE PROCESS
 ## how to clone your project from github.com!
