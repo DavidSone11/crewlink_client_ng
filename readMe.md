@@ -4,7 +4,12 @@
 <a href="#">www.crewlink_client_ng.com</a> |
 <a href="#">www.crewlink_client_ng.com</a> |
 <a href="#">www.crewlink_client_ng.com</a>
-<img src="http://webmpires.net/media/blogs/blog/quick-uploads/p36/banner-angularjs.jpg?mtime=1466611958">
+
+</p>
+
+<p>
+<img src="http://webmpires.net/media/blogs/blog/quick-uploads/p36/banner-angularjs.jpg?mtime=1466611958" width="200" height="200"> |
+<img src="https://www.codingmart.com/uploads/post/image/5811921c8ca7854ce4d6d5c6/angular2.png" width="200" height="200"> |
 </p>
 
 # GIT CLONE PROCESS
