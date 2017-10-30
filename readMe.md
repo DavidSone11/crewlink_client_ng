@@ -14,6 +14,7 @@
 <img src="https://scotch.io/wp-content/uploads/2014/10/learning-react-getting-started.png" width="200" height="200"> |
 <img src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png" width="200" height="200"> |
 <img src="http://blogs.quovantis.com/wp-content/uploads/2016/03/grunt_logo.jpg" width="200" height="200"> |
+<img src="https://juststickers.in/wp-content/uploads/2014/08/NPM.jpg" width="200" height="200"> |
 </p>
 
 # GIT CLONE PROCESS
