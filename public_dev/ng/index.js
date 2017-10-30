@@ -26,7 +26,7 @@ angular
     $stateProvider
       .state('dashboard', {
         url:'/dashboard',
-        templateUrl: 'views/dashboard/main.html',
+        templateUrl: 'ng/directives/dashboard/main.html',
         resolve: {
             loadMyDirectives:function($ocLazyLoad){
                 return $ocLazyLoad.load(
@@ -120,7 +120,7 @@ angular
             }),
             $ocLazyLoad.load({
                 name:'crewLinkNgApp',
-                files:['scripts/controllers/chartContoller.js']
+                files:['ng/controllers/chartContoller.js']
             })
           }
         }

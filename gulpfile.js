@@ -103,6 +103,13 @@ gulp.src('public_dev/images/**/*.*')
 });
 
 
+// Copy all ng js files
+gulp.task('build-bowercomponents', function () {
+    console.log("bower is updating");
+    return gulp.src('public_dev/bower_components/**/*')
+        .pipe(gulp.dest('public/bower_components/'))
+});
+
 gulp.task('build-connect', function () {
     connect.server({
         name: 'CrewLink Application :',
@@ -135,7 +142,7 @@ gulp.task("clear:project", function (callback) {
 });
 
 gulp.task('build', function (callback) {
-    runSequence(['build-ng','build-images' ,'build-sass', 'build-less', 'build-html', 'build-stylus', 'build-css', 'build-js'],
+    runSequence(['build-ng','build-bowercomponents','build-images' ,'build-sass', 'build-less', 'build-html', 'build-stylus', 'build-css', 'build-js'],
         callback);
 });
 

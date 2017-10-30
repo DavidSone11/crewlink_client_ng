@@ -3,7 +3,7 @@
  * @ngdoc overview
  * @name crewLinkNgApp
  * @description
- * # sbAdminApp
+ * # crewLinkNgApp
  *
  * Main module of the application.
  */
@@ -31,7 +31,7 @@ angular
             loadMyDirectives:function($ocLazyLoad){
                 return $ocLazyLoad.load(
                 {
-                    name:'sbAdminApp',
+                    name:'crewLinkNgApp',
                     files:[
                     'scripts/directives/header/header.js',
                     'scripts/directives/header/header-notification/header-notification.js',
@@ -81,7 +81,7 @@ angular
         resolve: {
           loadMyFiles:function($ocLazyLoad) {
             return $ocLazyLoad.load({
-              name:'sbAdminApp',
+              name:'crewLinkNgApp',
               files:[
               'scripts/controllers/main.js',
               'scripts/directives/timeline/timeline.js',
@@ -119,8 +119,8 @@ angular
               ]
             }),
             $ocLazyLoad.load({
-                name:'sbAdminApp',
-                files:['scripts/controllers/chartContoller.js']
+                name:'crewLinkNgApp',
+                files:['ng/controllers/chartContoller.js']
             })
           }
         }
