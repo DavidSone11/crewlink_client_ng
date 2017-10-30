@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "start:dev": "nodemon ./app.js",
+    "start:test": "gulp test",
+    "dist": "gulp serve:public",
+    "bower:install": "bower install"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -30,6 +34,7 @@
     "jade": "~1.11.0",
     "jshint": "^2.9.5",
     "morgan": "~1.9.0",
+    "nodemon": "^1.12.1",
     "run-sequence": "^2.2.0",
     "serve-favicon": "~2.4.5"
   },

@@ -26,6 +26,15 @@
 </p>
 
 
+# HOW TO RUN PROJECT USING COMMANDLINE IN NODE JS!!
+## to run the project using npm commands!
+#### npm include commands
+1. npm run start
+2. npm run start:dev
+3. npm run start:test
+4. npm run dist
+5. npm run bower:install
+
 # GIT CLONE PROCESS
 ## how to clone your project from github.com!
 1. Clone the repository:[https://github.com/DavidSone11/crewlink_client_ng.git](https://github.com/DavidSone11/crewlink_client_ng.git). 
