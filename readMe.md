@@ -2,7 +2,7 @@
 
 # GIT CLONE PROCESS
 ## how to clone your project from github.com!
-1. Clone the repository: `https://github.com/DavidSone11/crewlink_client_ng.git`
+1. Clone the repository: https://github.com/DavidSone11/crewlink_client_ng.git
 
 # INSTALLATION PROCESS
 ## To install all the npm and bower dependency!
