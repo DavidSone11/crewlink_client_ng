@@ -27,7 +27,7 @@ var gulp = require('gulp'),
  // delete all the files and folder
 gulp.task('clean:project', function () {
     util.log('clean:project', 'clean all the directory from project excepts bower', util.colors.magenta('123'));
-    return del(['public/stylesheets/','public/images/' ,'public/coffee/','public/javascripts/','public/ng/', '!public/bower_components/'
+    return del(['public/*.html','public/stylesheets/','public/images/' ,'public/coffee/','public/javascripts/','public/ng/', '!public/bower_components/'
     ]);
 });
 

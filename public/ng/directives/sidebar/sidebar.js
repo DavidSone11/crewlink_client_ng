@@ -7,7 +7,7 @@
  * # adminPosHeader
  */
 
-angular.module('sbAdminApp')
+angular.module('crewLinkNgApp')
   .directive('sidebar',['$location',function() {
     return {
       templateUrl:'scripts/directives/sidebar/sidebar.html',

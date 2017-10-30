@@ -6,7 +6,7 @@
  * @description
  * # adminPosHeader
  */
-angular.module('sbAdminApp')
+angular.module('crewLinkNgApp')
 	.directive('notifications',function(){
 		return {
         templateUrl:'scripts/directives/notifications/notifications.html',

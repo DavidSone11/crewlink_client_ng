@@ -33,10 +33,10 @@ angular
                 {
                     name:'crewLinkNgApp',
                     files:[
-                    'scripts/directives/header/header.js',
-                    'scripts/directives/header/header-notification/header-notification.js',
-                    'scripts/directives/sidebar/sidebar.js',
-                    'scripts/directives/sidebar/sidebar-search/sidebar-search.js'
+                    'ng/directives/header/header.js',
+                    'ng/directives/header/header-notification/header-notification.js',
+                    'ng/directives/sidebar/sidebar.js',
+                    'ng/directives/sidebar/sidebar-search/sidebar-search.js'
                     ]
                 }),
                 $ocLazyLoad.load(
@@ -77,36 +77,36 @@ angular
       .state('dashboard.home',{
         url:'/home',
         controller: 'MainCtrl',
-        templateUrl:'views/dashboard/home.html',
+        templateUrl:'ng/directives/dashboard1/home.html',
         resolve: {
           loadMyFiles:function($ocLazyLoad) {
             return $ocLazyLoad.load({
               name:'crewLinkNgApp',
               files:[
-              'scripts/controllers/main.js',
-              'scripts/directives/timeline/timeline.js',
-              'scripts/directives/notifications/notifications.js',
-              'scripts/directives/chat/chat.js',
-              'scripts/directives/dashboard/stats/stats.js'
+              'ng/controllers/main.js',
+              'ng/directives/timeline/timeline.js',
+              'ng/directives/notifications/notifications.js',
+              'ng/directives/chat/chat.js',
+              'ng/directives/dashboard/stats/stats.js'
               ]
             })
           }
         }
       })
       .state('dashboard.form',{
-        templateUrl:'views/form.html',
+        templateUrl:'ng/directives/form.html',
         url:'/form'
     })
       .state('dashboard.blank',{
-        templateUrl:'views/pages/blank.html',
+        templateUrl:'ng/directives/pages/blank.html',
         url:'/blank'
     })
       .state('login',{
-        templateUrl:'views/pages/login.html',
+        templateUrl:'ng/directives/pages/login.html',
         url:'/login'
     })
       .state('dashboard.chart',{
-        templateUrl:'views/chart.html',
+        templateUrl:'ng/directives/chart.html',
         url:'/chart',
         controller:'ChartCtrl',
         resolve: {
@@ -126,31 +126,31 @@ angular
         }
     })
       .state('dashboard.table',{
-        templateUrl:'views/table.html',
+        templateUrl:'ng/directives/table.html',
         url:'/table'
     })
       .state('dashboard.panels-wells',{
-          templateUrl:'views/ui-elements/panels-wells.html',
+          templateUrl:'ng/directives/ui-elements/panels-wells.html',
           url:'/panels-wells'
       })
       .state('dashboard.buttons',{
-        templateUrl:'views/ui-elements/buttons.html',
+        templateUrl:'ng/directives/ui-elements/buttons.html',
         url:'/buttons'
     })
       .state('dashboard.notifications',{
-        templateUrl:'views/ui-elements/notifications.html',
+        templateUrl:'ng/directives/ui-elements/notifications.html',
         url:'/notifications'
     })
       .state('dashboard.typography',{
-       templateUrl:'views/ui-elements/typography.html',
+       templateUrl:'ng/directives/ui-elements/typography.html',
        url:'/typography'
    })
       .state('dashboard.icons',{
-       templateUrl:'views/ui-elements/icons.html',
+       templateUrl:'ng/directives/ui-elements/icons.html',
        url:'/icons'
    })
       .state('dashboard.grid',{
-       templateUrl:'views/ui-elements/grid.html',
+       templateUrl:'ng/directives/ui-elements/grid.html',
        url:'/grid'
    })
   }]);

@@ -1,4 +1,4 @@
-'use strict';
+' use strict';
 /**
  * @ngdoc function
  * @name sbAdminApp.controller:MainCtrl
