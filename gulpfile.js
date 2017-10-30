@@ -15,17 +15,19 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     imagemin = require('gulp-imagemin'),
     coffee = require('gulp-coffee'),
+    svgmin = require('gulp-svgmin'),
     clean = require('gulp-clean');
 
 /**
  * 
- * GULP FILE WRITTEN BY SANTOSH SAHU
+ * GULP FILE WRITTEN BY SANTOSH
  */
 
 
+ // delete all the files and folder
 gulp.task('clean:project', function () {
     util.log('clean:project', 'clean all the directory from project excepts bower', util.colors.magenta('123'));
-    return del(['public/stylesheets/', 'public/javascripts/', '!public/bower_components/'
+    return del(['public/stylesheets/','public/images/' ,'public/coffee/','public/javascripts/','public/ng/', '!public/bower_components/'
     ]);
 });
 
@@ -40,6 +42,7 @@ gulp.task('build-cache', function (done) {
     return cache.clearAll(done);
 });
 
+// Copy all js files
 gulp.task('build-js', function () {
     gulp.src('public_dev/js/**/*.js')
         .pipe(minifyjs())
@@ -47,6 +50,7 @@ gulp.task('build-js', function () {
         .pipe(gulp.dest('public/javascripts/'));
 });
 
+// Copy all scss files
 gulp.task('build-sass', function () {
     return gulp.src('public_dev/scss/**/*.scss')
         .pipe(sass({
@@ -57,6 +61,7 @@ gulp.task('build-sass', function () {
         .pipe(gulp.dest('public/stylesheets/stylesheets.css'));
 });
 
+// Copy all css files
 gulp.task('build-css', function () {
     util.log('build-css', 'build css working', util.colors.magenta('123'));
 
@@ -70,7 +75,7 @@ gulp.task('build-css', function () {
 });
 
 
-
+// Copy all less files
 gulp.task('build-less', function () {
     gulp.src('public_dev/less/**/*.less')
         .pipe(gulp_less())
@@ -78,11 +83,15 @@ gulp.task('build-less', function () {
 
 });
 
+
+// Copy all html files
 gulp.task('build-html', function () {
     gulp.src('public_dev/**/*.html')
         .pipe(connect.reload())
         .pipe(gulp.dest('public/'));
 });
+
+// Copy all stylus files
 gulp.task('build-stylus', function () {
     gulp.src('public_dev/stylus/**/*.styl')
         .pipe(stylus())
@@ -111,6 +120,7 @@ gulp.task('build-bowercomponents', function () {
         .pipe(gulp.dest('public/bower_components/'))
 });
 
+// Copy coffee scripts
 gulp.task('build-coffee', function () {
     gulp.src('public_dev/coffee/**/*.coffee')
         .pipe(coffee({ bare: true })
@@ -118,9 +128,14 @@ gulp.task('build-coffee', function () {
         .pipe(gulp.dest('public/coffee/'))
 });
 
+
+// Copy svg
 gulp.task('build-svg', function () {
     return gulp.src('public_dev/images/svg/**/*.svg')
         .pipe(svgmin({
+            js2svg: {
+                pretty: true
+            },
             plugins: [{
                 removeDoctype: false
             }, {
@@ -139,6 +154,22 @@ gulp.task('build-svg', function () {
         .pipe(gulp.dest('public/images/svg/'));
 });
 
+
+// Copy Fonts
+gulp.task('build-fonts', function() {
+    return gulp.src('public_dev/images/fonts/**/*.{ttf,woff,eof,svg}')
+        .pipe(gulp.dest('public_dev/images/fonts/'));
+});
+
+// Copy icons
+gulp.task('build-icons', function() {
+    return gulp.src('public_dev/images/icons/**/*.+(png|jpg|jpeg|gif|ico)')
+        // Caching images that ran through imagemin
+        // .pipe(cache(imagemin({
+        //     interlaced: true
+        // })))
+        .pipe(gulp.dest('public_dev/images/icons/'));
+});
 
 gulp.task('build-connect', function () {
     connect.server({
@@ -173,7 +204,7 @@ gulp.task("clear:project", function (callback) {
 });
 
 gulp.task('build', function (callback) {
-    runSequence(['build-ng', 'build-bowercomponents','build-svg', 'build-coffee', 'build-images', 'build-sass', 'build-less', 'build-html', 'build-stylus', 'build-css', 'build-js'],
+    runSequence(['build-ng', 'build-bowercomponents','build-fonts','build-icons', 'build-svg', 'build-coffee', 'build-images', 'build-sass', 'build-less', 'build-html', 'build-stylus', 'build-css', 'build-js'],
         callback);
 });
 
