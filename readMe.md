@@ -4,7 +4,7 @@
 <a href="#">www.crewlink_client_ng.com</a> |
 <a href="#">www.crewlink_client_ng.com</a> |
 <a href="#">www.crewlink_client_ng.com</a>
-<img src="http://s.4cdn.org/image/title/105.gif">
+<img src="http://webmpires.net/media/blogs/blog/quick-uploads/p36/banner-angularjs.jpg?mtime=1466611958">
 </p>
 
 # GIT CLONE PROCESS
