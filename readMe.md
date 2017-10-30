@@ -29,11 +29,11 @@
 # HOW TO RUN PROJECT USING COMMANDLINE IN NODE JS!!
 ## to run the project using npm commands!
 #### npm include commands
-1. npm run start
-2. npm run start:dev
-3. npm run start:test
-4. npm run dist
-5. npm run bower:install
+- npm run start
+- npm run start:dev
+- npm run start:test
+- npm run dist
+- npm run bower:install
 
 # GIT CLONE PROCESS
 ## how to clone your project from github.com!
