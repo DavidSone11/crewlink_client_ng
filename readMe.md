@@ -4,8 +4,8 @@
 <pre>
   <p align="center">
   <b> CREWLINK_CLIENT_NG </b></br>
-  <a href="#">www.crewlink_client_ng.com</a> |
-  <a href="#">www.crewlink_client_ng.com</a> |
+  <a href="#">www.crewlink_client_ng.com</a> 
+  <a href="#">www.crewlink_client_ng.com</a> 
   <a href="#">www.crewlink_client_ng.com</a>
 
 </p>  
