@@ -1,7 +1,7 @@
 ## gulp run
->gulp clear:project
->gulp build
->gulp
+    > gulp clear:project <br />
+    > gulp build <br />
+    > gulp <br />
 
 
 
