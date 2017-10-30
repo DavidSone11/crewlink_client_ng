@@ -15,6 +15,9 @@
 <img src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png" width="200" height="200"> |
 <img src="http://blogs.quovantis.com/wp-content/uploads/2016/03/grunt_logo.jpg" width="200" height="200"> |
 <img src="https://juststickers.in/wp-content/uploads/2014/08/NPM.jpg" width="200" height="200"> |
+<img src="https://snipcart.com/media/10175/what-is-vuejs-definition.png" width="200" height="200"> |
+<img src="http://backbonejs.org/docs/images/backbone.png" width="200" height="200"> |
+<img src="http://emberjs.com/images/tomster-twitter-card.png" width="200" height="200"> |
 </p>
 
 # GIT CLONE PROCESS
