@@ -15,16 +15,16 @@
 
 <pre>
 <p>
-<img src="http://webmpires.net/media/blogs/blog/quick-uploads/p36/banner-angularjs.jpg?mtime=1466611958" width="200" height="200"> |
-<img src="https://www.codingmart.com/uploads/post/image/5811921c8ca7854ce4d6d5c6/angular2.png" width="200" height="200"> |
-<img src="http://www.programmingscripts.com/wp-content/uploads/2016/01/jquery-icon.png" width="200" height="200"> |
-<img src="https://scotch.io/wp-content/uploads/2014/10/learning-react-getting-started.png" width="200" height="200"> |
-<img src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png" width="200" height="200"> |
-<img src="http://blogs.quovantis.com/wp-content/uploads/2016/03/grunt_logo.jpg" width="200" height="200"> |
-<img src="https://juststickers.in/wp-content/uploads/2014/08/NPM.jpg" width="200" height="200"> |
-<img src="https://snipcart.com/media/10175/what-is-vuejs-definition.png" width="200" height="200"> |
-<img src="http://backbonejs.org/docs/images/backbone.png" width="200" height="200"> |
-<img src="http://emberjs.com/images/tomster-twitter-card.png" width="200" height="200"> |
+<img src="http://webmpires.net/media/blogs/blog/quick-uploads/p36/banner-angularjs.jpg?mtime=1466611958" width="200" height="200"> 
+<img src="https://www.codingmart.com/uploads/post/image/5811921c8ca7854ce4d6d5c6/angular2.png" width="200" height="200"> 
+<img src="http://www.programmingscripts.com/wp-content/uploads/2016/01/jquery-icon.png" width="200" height="200"> 
+<img src="https://scotch.io/wp-content/uploads/2014/10/learning-react-getting-started.png" width="200" height="200"> 
+<img src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png" width="200" height="200"> 
+<img src="http://blogs.quovantis.com/wp-content/uploads/2016/03/grunt_logo.jpg" width="200" height="200"> 
+<img src="https://juststickers.in/wp-content/uploads/2014/08/NPM.jpg" width="200" height="200"> 
+<img src="https://snipcart.com/media/10175/what-is-vuejs-definition.png" width="200" height="200"> 
+<img src="http://backbonejs.org/docs/images/backbone.png" width="200" height="200"> 
+<img src="http://emberjs.com/images/tomster-twitter-card.png" width="200" height="200"> 
 </p>
 </pre>
 
