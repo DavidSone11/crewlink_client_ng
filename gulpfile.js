@@ -97,10 +97,10 @@ gulp.task('build-ng', function () {
         .pipe(gulp.dest('public/ng/'))
 });
 
-gulp.task('build-images', function(){
-gulp.src('public_dev/images/**/*.*')
-    .pipe(imagemin())
-    .pipe(gulp.dest('public/images'))
+gulp.task('build-images', function () {
+    gulp.src('public_dev/images/**/*.+(png|jpg|jpeg|gif)')
+        .pipe(imagemin())
+        .pipe(gulp.dest('public/images'))
 });
 
 
@@ -111,12 +111,34 @@ gulp.task('build-bowercomponents', function () {
         .pipe(gulp.dest('public/bower_components/'))
 });
 
-gulp.task('build-coffee', function() {
+gulp.task('build-coffee', function () {
     gulp.src('public_dev/coffee/**/*.coffee')
-    .pipe(coffee({bare: true})
-      .on('error', util.log))
-    .pipe(gulp.dest('public/coffee/'))
-  });
+        .pipe(coffee({ bare: true })
+            .on('error', util.log))
+        .pipe(gulp.dest('public/coffee/'))
+});
+
+gulp.task('build-svg', function () {
+    return gulp.src('public_dev/images/svg/**/*.svg')
+        .pipe(svgmin({
+            plugins: [{
+                removeDoctype: false
+            }, {
+                removeComments: false
+            }, {
+                cleanupNumericValues: {
+                    floatPrecision: 2
+                }
+            }, {
+                convertColors: {
+                    names2hex: false,
+                    rgb2hex: false
+                }
+            }]
+        }))
+        .pipe(gulp.dest('public/images/svg/'));
+});
+
 
 gulp.task('build-connect', function () {
     connect.server({
@@ -136,9 +158,9 @@ gulp.task('watch', function () {
     gulp.watch(['public_dev/css/**/*.css'], ['build-css']);
     gulp.watch(['public_dev/stylus/**/*.styl'], ['build-stylus']);
     gulp.watch(['public_dev/js/**/*.js'], ['build-js']);
-    gulp.watch(['public_dev/coffee/**/*.*'], ['build-coffee']);
+    gulp.watch(['public_dev/coffee/**/*.coffee'], ['build-coffee']);
     gulp.watch(['public_dev/images/**/*.*'], ['build-images']);
-    
+    gulp.watch(['public_dev/images/svg/**/*.svg'], ['build-svg']);
     gulp.watch('public_dev/ng/**/*', ['ng']);
     gulp.watch('public_dev/**/*', connect.reload);
 });
@@ -151,7 +173,7 @@ gulp.task("clear:project", function (callback) {
 });
 
 gulp.task('build', function (callback) {
-    runSequence(['build-ng','build-bowercomponents','build-coffee','build-images' ,'build-sass', 'build-less', 'build-html', 'build-stylus', 'build-css', 'build-js'],
+    runSequence(['build-ng', 'build-bowercomponents','build-svg', 'build-coffee', 'build-images', 'build-sass', 'build-less', 'build-html', 'build-stylus', 'build-css', 'build-js'],
         callback);
 });
 
