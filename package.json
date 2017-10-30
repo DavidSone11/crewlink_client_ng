@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "body-parser": "~1.18.2",
+    "coffeescript": "^2.0.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "del": "^3.0.0",
@@ -14,6 +15,7 @@
     "gulp": "^3.9.1",
     "gulp-cache": "^0.5.0",
     "gulp-clean": "^0.3.2",
+    "gulp-coffee": "^2.3.4",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.0.0",
     "gulp-cssnano": "^2.1.2",
@@ -25,6 +27,7 @@
     "gulp-stylus": "^2.6.0",
     "gulp-util": "^3.0.1",
     "jade": "~1.11.0",
+    "jshint": "^2.9.5",
     "morgan": "~1.9.0",
     "run-sequence": "^2.2.0",
     "serve-favicon": "~2.4.5"

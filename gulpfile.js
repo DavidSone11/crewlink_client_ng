@@ -14,6 +14,7 @@ var gulp = require('gulp'),
     minifyjs = require('gulp-js-minify'),
     cache = require('gulp-cache'),
     imagemin = require('gulp-imagemin'),
+    coffee = require('gulp-coffee'),
     clean = require('gulp-clean');
 
 /**
@@ -103,12 +104,19 @@ gulp.src('public_dev/images/**/*.*')
 });
 
 
-// Copy all ng js files
+// Copy all bower js files
 gulp.task('build-bowercomponents', function () {
     console.log("bower is updating");
     return gulp.src('public_dev/bower_components/**/*')
         .pipe(gulp.dest('public/bower_components/'))
 });
+
+gulp.task('build-coffee', function() {
+    gulp.src('public_dev/coffee/**/*.coffee')
+    .pipe(coffee({bare: true})
+      .on('error', util.log))
+    .pipe(gulp.dest('public/coffee/'))
+  });
 
 gulp.task('build-connect', function () {
     connect.server({
@@ -128,6 +136,7 @@ gulp.task('watch', function () {
     gulp.watch(['public_dev/css/**/*.css'], ['build-css']);
     gulp.watch(['public_dev/stylus/**/*.styl'], ['build-stylus']);
     gulp.watch(['public_dev/js/**/*.js'], ['build-js']);
+    gulp.watch(['public_dev/coffee/**/*.*'], ['build-coffee']);
     gulp.watch(['public_dev/images/**/*.*'], ['build-images']);
     
     gulp.watch('public_dev/ng/**/*', ['ng']);
@@ -142,7 +151,7 @@ gulp.task("clear:project", function (callback) {
 });
 
 gulp.task('build', function (callback) {
-    runSequence(['build-ng','build-bowercomponents','build-images' ,'build-sass', 'build-less', 'build-html', 'build-stylus', 'build-css', 'build-js'],
+    runSequence(['build-ng','build-bowercomponents','build-coffee','build-images' ,'build-sass', 'build-less', 'build-html', 'build-stylus', 'build-css', 'build-js'],
         callback);
 });
 

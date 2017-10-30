@@ -1,15 +1,7 @@
 
 'use strict';
-
-
-
-
 function add() {
-   
-
-console.log("DASDASDa");
-
-
+    console.log("DASDASDa");
 }
 
 add();
