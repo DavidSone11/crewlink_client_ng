@@ -1,10 +1,10 @@
 
 
-#CLONE PROCESS
+# CLONE PROCESS
 ## how to clone your project from github.com!
 
 
-#INSTALLATION PROCESS
+# INSTALLATION PROCESS
 ## To install all the npm and bower dependency!
 
 # GULP
