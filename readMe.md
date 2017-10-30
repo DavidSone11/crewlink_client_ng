@@ -1,27 +1,18 @@
 
 
-```html
-<h2>Example of code</h2>
 
 <pre>
-    <div class="container">
-        <div class="block two first">
-            <h2>Your title</h2>
-            <div class="wrap">
-            //Your content
-            </div>
-        </div>
-    </div>
-</pre>
-```
-
-<p align="center">
+  <p align="center">
 <b> CREWLINK_CLIENT_NG </b></br>
 <a href="#">www.crewlink_client_ng.com</a> |
 <a href="#">www.crewlink_client_ng.com</a> |
 <a href="#">www.crewlink_client_ng.com</a>
 
-</p>
+</p>  
+</pre>
+
+
+
 
 <p>
 <img src="http://webmpires.net/media/blogs/blog/quick-uploads/p36/banner-angularjs.jpg?mtime=1466611958" width="200" height="200"> |
