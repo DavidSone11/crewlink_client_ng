@@ -30,3 +30,5 @@ To start you should first add your credentials to git global store to avoid agai
  > git config --global credential.helper store <br />
  > git config --global user.email "you@example.com" <br />
  > git config --global user.name "Your Name" <br />
+
+ #### Modules & Packages
