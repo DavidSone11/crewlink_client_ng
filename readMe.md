@@ -51,9 +51,9 @@
 # GULP
 ## all the below commands are used for gulp clean,build,run!
 ```text
-e:\WORKSPACE_NODEJS_V.1.0.0\crewlink_client_ng>gulp clear:project
-e:\WORKSPACE_NODEJS_V.1.0.0\crewlink_client_ng> gulp build 
-e:\WORKSPACE_NODEJS_V.1.0.0\crewlink_client_ng> gulp 
+  E:\WORKSPACE_NODEJS_V.1.0.0\crewlink_client_ng>gulp clear:project
+  E:\WORKSPACE_NODEJS_V.1.0.0\crewlink_client_ng> gulp build 
+  E:\WORKSPACE_NODEJS_V.1.0.0\crewlink_client_ng> gulp 
 ```
 
 
