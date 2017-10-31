@@ -23,12 +23,16 @@ var usemin = require('gulp-usemin');
 var uglifyJs = require('gulp-uglify');
 var htmlmin = require('gulp-htmlmin');
 var clean = require('gulp-clean');
+var multiDestination = require('gulp-multi-dest');
 
 /**
  * 
  * GULP FILE WRITTEN BY SANTOSH
  */
 
+var destOptions = {
+    mode: 0755
+};
 
 // delete all the files and folder
 gulp.task('clean:project', function () {
@@ -52,7 +56,9 @@ gulp.task('build-cache', function (done) {
 gulp.task('build-usemin', function () {
     return gulp.src('public_dev/*.html')
         .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest('public/'));
+        //.pipe(gulp.dest('public/'))
+       // .pipe(multiDestination(['.public/', 'public/javascripts/'], destOptions));
+       .pipe(multiDestination(['public/'], destOptions));
 });
 
 
@@ -94,7 +100,7 @@ gulp.task('build-css', function () {
 
     return gulp.src('public_dev/css/**/*.css')
         .pipe(gulp_sourcemaps.init())
-        .pipe(cssnano())
+        .pipe(cssnano({keepBreaks:true}))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9'))
         .pipe(concat('style.min.css'))
         //.pipe(rename('style.min.css'))
@@ -114,11 +120,13 @@ gulp.task('build-less', function () {
 
 
 // Copy all html files
-gulp.task('build-html', function () {
-    gulp.src('public_dev/**/*.html')
-        .pipe(connect.reload())
-        .pipe(gulp.dest('public/'));
-});
+// gulp.task('build-html', function () {
+//     gulp.src('public_dev/**/*.html')
+//         .pipe(connect.reload())
+//         .pipe(gulp.dest('public/'));
+// });
+
+
 
 // Copy all stylus files
 gulp.task('build-stylus', function () {
@@ -132,13 +140,13 @@ gulp.task('build-stylus', function () {
 gulp.task('build-ng', function () {
     console.log("ng is updating");
     return gulp.src('public_dev/ng/**/*')
-        .pipe(gulp.dest('public/ng/'))
+        .pipe(gulp.dest('public/ng/'));
 });
 
 gulp.task('build-images', function () {
     gulp.src('public_dev/images/**/*.+(png|jpg|jpeg|gif)')
         .pipe(imagemin())
-        .pipe(gulp.dest('public/images'))
+        .pipe(gulp.dest('public/images'));
 });
 
 
@@ -213,7 +221,7 @@ gulp.task('build-connect', function () {
 
 gulp.task('watch', function () {
     gulp.watch('public_dev/sass/**/*.scss', ['build-sass']);
-    gulp.watch(['public_dev/**/*.html'], ['build-html']);
+    //gulp.watch(['public_dev/**/*.html'], ['build-html']);
     gulp.watch(['public_dev/less/**/*.less'], ['build-less']);
     gulp.watch(['public_dev/css/**/*.css'], ['build-css']);
     gulp.watch(['public_dev/stylus/**/*.styl'], ['build-stylus']);
@@ -244,7 +252,7 @@ gulp.task("clear:project", function (callback) {
 });
 
 gulp.task('build', function (callback) {
-    runSequence(['build-ng', 'build-bowercomponents','build-usemin','build-fonts', 'build-icons', 'build-svg', 'build-coffee', 'build-images', 'build-sass', 'build-less', 'build-html', 'build-stylus', 'build-css', 'build-js'],
+    runSequence(['build-ng', 'build-bowercomponents', 'build-usemin', 'build-fonts', 'build-icons', 'build-svg', 'build-coffee', 'build-images', 'build-sass', 'build-less', /*'build-html',*/ 'build-stylus', 'build-css', 'build-js'],
         callback);
 });
 

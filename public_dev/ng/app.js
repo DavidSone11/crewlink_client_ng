@@ -14,6 +14,7 @@ angular
     'ui.bootstrap',
     'angular-loading-bar',
     'toaster',
+    'base64'
 
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
