@@ -146,7 +146,7 @@ gulp.task('build-images', function () {
 gulp.task('build-bowercomponents', function () {
     console.log("bower is updating");
     return gulp.src('public_dev/bower_components/**/*')
-        .pipe(gulp.dest('public/bower_components/'))
+        .pipe(gulp.dest('public/bower_components/'));
 });
 
 // Copy coffee scripts
@@ -154,7 +154,7 @@ gulp.task('build-coffee', function () {
     gulp.src('public_dev/coffee/**/*.coffee')
         .pipe(coffee({ bare: true })
             .on('error', util.log))
-        .pipe(gulp.dest('public/coffee/'))
+        .pipe(gulp.dest('public/coffee/'));
 });
 
 
@@ -244,7 +244,7 @@ gulp.task("clear:project", function (callback) {
 });
 
 gulp.task('build', function (callback) {
-    runSequence(['build-ng', 'build-bowercomponents', 'build-fonts', 'build-icons', 'build-svg', 'build-coffee', 'build-images', 'build-sass', 'build-less', 'build-html', 'build-stylus', 'build-css', 'build-js'],
+    runSequence(['build-ng', 'build-bowercomponents','build-usemin','build-fonts', 'build-icons', 'build-svg', 'build-coffee', 'build-images', 'build-sass', 'build-less', 'build-html', 'build-stylus', 'build-css', 'build-js'],
         callback);
 });
 
