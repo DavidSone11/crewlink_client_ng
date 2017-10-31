@@ -23,7 +23,8 @@ angular
       events: true,
     });
 
-    $urlRouterProvider.otherwise('/dashboard/home');
+    ///$urlRouterProvider.otherwise('/dashboard/home');
+    $urlRouterProvider.otherwise('/login');
 
     $stateProvider
       .state('dashboard', {
@@ -73,7 +74,7 @@ angular
                 name: 'ngTouch',
                 files: ['bower_components/angular-touch/angular-touch.js']
               })
-             
+
 
           }
         }
@@ -106,8 +107,20 @@ angular
         url: '/blank'
       })
       .state('login', {
-        templateUrl: 'ng/directives/pages/login.html',
-        url: '/login'
+        templateUrl: 'ng/directives/login/login.directive.html',
+        url: '/login',
+        controller: 'loginCtrl',
+        resolve: {
+          loadMyFiles: function ($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name: 'crewLinkNgApp',
+              files: [
+                'ng/controllers/login.controller.js',
+                'ng/directives/login/login.directive.js',
+              ]
+            })
+          }
+        }
       })
       .state('dashboard.chart', {
         templateUrl: 'ng/directives/chart.html',
