@@ -1,13 +1,13 @@
 ' use strict';
 
 angular.module('crewLinkNgApp')
-    .directive('login', function () {
+    .directive('chart', function () {
         return {
-            templateUrl: 'ng/directives/login/login.tmpl.html',
+            templateUrl: 'ng/directives/dashboard/chart/chart.tmpl.html',
             restrict: 'E',
             controller: function ($scope) {
 
-                console.log("at login directive");
+                console.log("at chart directive");
             }
 
         };

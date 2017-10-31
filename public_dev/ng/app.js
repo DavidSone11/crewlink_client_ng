@@ -58,7 +58,7 @@ angular
               {
                 name: 'ngCookies',
                 files: ['bower_components/angular-cookies/angular-cookies.js']
-              })
+              });
             $ocLazyLoad.load(
               {
                 name: 'ngResource',
@@ -68,12 +68,12 @@ angular
               {
                 name: 'ngSanitize',
                 files: ['bower_components/angular-sanitize/angular-sanitize.js']
-              })
+              });
             $ocLazyLoad.load(
               {
                 name: 'ngTouch',
                 files: ['bower_components/angular-touch/angular-touch.js']
-              })
+              });
 
 
           }
@@ -94,7 +94,7 @@ angular
                 'ng/directives/chat/chat.js',
                 'ng/directives/dashboard/stats/stats.js'
               ]
-            })
+            });
           }
         }
       })
@@ -118,18 +118,18 @@ angular
                 'ng/controllers/login.controller.js',
                 'ng/directives/login/login.directive.js',
               ]
-            })
+            });
           }
         }
       })
       .state('dashboard.chart', {
-        templateUrl: 'ng/directives/chart.html',
+        templateUrl: 'ng/directives/dashboard/chart/chart.directive.html',
         url: '/chart',
         controller: 'ChartCtrl',
         resolve: {
           loadMyFile: function ($ocLazyLoad) {
             return $ocLazyLoad.load({
-              name: 'chart.js',
+              name: 'crewLinkNgApp',
               files: [
                 'bower_components/angular-chart.js/dist/angular-chart.min.js',
                 'bower_components/angular-chart.js/dist/angular-chart.css'
@@ -137,8 +137,10 @@ angular
             }),
               $ocLazyLoad.load({
                 name: 'crewLinkNgApp',
-                files: ['ng/controllers/chartContoller.js']
-              })
+                files: ['ng/controllers/chart.contoller.js',
+                  'ng/directives/dashboard/chart/chart.directive.js'
+                ]
+              });
           }
         }
       })
