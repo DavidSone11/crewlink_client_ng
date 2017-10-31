@@ -7,18 +7,35 @@
  * Controller of the crewLinkNgApp
  */
 angular.module('crewLinkNgApp')
-  .controller('loginCtrl', function ($scope, $position, toaster, $location,$base64) {
+  .controller('loginCtrl', function ($scope, $position, toaster, $location, $base64) {
 
-    console.log("dadsa");
 
-    $scope.login = function (username, password) {
+    $scope.isLoginUser = false;
+    $scope.isLoginPassword = false;
 
-      if (username == 'admin' && password == 'admin') {
-        $scope.encoded = $base64.encode(username+password);
-        $scope.decoded = $base64.decode( $scope.encoded);
-        $location.url("dashboard.home");
+    $scope.userobj = {
+      'username': '',
+      'password': ''
 
+    };
+
+    $scope.login = function () {
+
+      if ($scope.userobj.username == 'admin') {
+        $scope.isLoginUser = false;
+      } else {
+        $scope.isLoginUser = !$scope.isLoginUser;
       }
+
+      if ($scope.userobj.password == 'admin') {
+        $scope.isLoginPassword = $scope.isLoginPassword;
+      } else {
+        $scope.isLoginPassword = !$scope.isLoginPassword;
+      }
+
+      $location.url("dashboard.home");
+
+
 
     };
 

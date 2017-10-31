@@ -18,7 +18,7 @@ angular.module('crewLinkNgApp')
           body: 'home Removed Successfully!!!'
         }); 
 
-    }
+    };
 
 
   });
