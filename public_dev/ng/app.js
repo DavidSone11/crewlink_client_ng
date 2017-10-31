@@ -12,7 +12,8 @@ angular
     'oc.lazyLoad',
     'ui.router',
     'ui.bootstrap',
-    'angular-loading-bar',
+    'angular-loading-bar'
+    
   ])
   .config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider',function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider) {
     
@@ -70,7 +71,16 @@ angular
                 {
                   name:'ngTouch',
                   files:['bower_components/angular-touch/angular-touch.js']
-                })
+                }),
+                $ocLazyLoad.load(
+                  {
+                    name:'toaster',
+                    files:[
+                    'bower_components/AngularJS-Toaster/toaster.js',
+                    "bower_components/AngularJS-Toaster/toaster.css"
+                  ]
+                  })
+  
             }
         }
     })
