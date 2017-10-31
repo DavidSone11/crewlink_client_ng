@@ -19,16 +19,27 @@ angular.module('crewLinkNgApp')
 
     };
 
+    $scope.inputType = 'password';
+
+    $scope.hideShowPassword = function () {
+      if ($scope.inputType == 'password')
+        $scope.inputType = 'text';
+      else
+        $scope.inputType = 'password';
+    };
+
     $scope.login = function () {
 
       if ($scope.userobj.username == 'admin') {
         $scope.isLoginUser = false;
+        $scope.isLoginPassword = false;
       } else {
         $scope.isLoginUser = !$scope.isLoginUser;
+        $scope.isLoginPassword = !$scope.isLoginPassword;
       }
 
       if ($scope.userobj.password == 'admin') {
-        $scope.isLoginPassword = $scope.isLoginPassword;
+        $scope.isLoginPassword = false;
       } else {
         $scope.isLoginPassword = !$scope.isLoginPassword;
       }

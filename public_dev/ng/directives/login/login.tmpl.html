@@ -11,15 +11,18 @@
                             <div class="form-group">
                                 <input class="form-control" placeholder="username" name="username" type="text" autofocus ng-model="userobj.username">
 
-                                <div class="login_error" ng-if="isLoginUser">
+                                <div class="login_error" ng-show="isLoginUser">
                                     <span>
                                         <i class="fa fa-times-circle" aria-hidden="true"></i>Unauthorized: Logon failed due to Wrong Username</span>
                                 </div>
 
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Password" name="password" type="password" ng-model="userobj.password">
-                                <div class="login_error" ng-if="isLoginPassword">
+                                <input class="form-control " placeholder="Password" name="password" type="{{inputType}}" ng-model="userobj.password">
+                                <span ng-click="hideShowPassword()" class="col-sm-offset-10 col-sm-2" style="cursor: pointer; pointer-events: all;">
+                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                </span>
+                                <div class="login_error" ng-show="isLoginPassword">
                                     <span>
                                         <i class="fa fa-times-circle" aria-hidden="true"></i>Unauthorized: Logon failed due to Wrong Username</span>
                                 </div>
