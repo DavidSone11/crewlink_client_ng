@@ -18,6 +18,9 @@ var gulp = require('gulp'),
     svgmin = require('gulp-svgmin'),
     autoprefixer = require('gulp-autoprefixer'),
     rename = require('gulp-rename'),
+    watch = require('gulp-watch'),
+    usemin = require('gulp-usemin'),
+    uglifyJs = require('gulp-uglify'),
     clean = require('gulp-clean');
 
 /**
@@ -26,10 +29,10 @@ var gulp = require('gulp'),
  */
 
 
- // delete all the files and folder
+// delete all the files and folder
 gulp.task('clean:project', function () {
     util.log('clean:project', 'clean all the directory from project excepts bower', util.colors.magenta('123'));
-    return del(['public/*.html','public/stylesheets/','public/images/' ,'public/coffee/','public/javascripts/','public/ng/', '!public/bower_components/'
+    return del(['public/*.html', 'public/stylesheets/', 'public/images/', 'public/coffee/', 'public/javascripts/', 'public/ng/', '!public/bower_components/'
     ]);
 });
 
@@ -42,6 +45,16 @@ gulp.task('build-clean', function () {
 
 gulp.task('build-cache', function (done) {
     return cache.clearAll(done);
+});
+
+
+gulp.task('build-usemin', function() {
+    return gulp.src('public_dev/index.html')
+        .pipe(usemin({
+            js: [uglifyJs(), 'concat'],
+            css: [cssnano({keepSpecialComments: 0}), 'concat'],
+        }))
+        .pipe(gulp.dest('public/'));
 });
 
 // Copy all js files
@@ -77,7 +90,7 @@ gulp.task('build-css', function () {
         //.pipe(rename('style.min.css'))
         .pipe(gulp_sourcemaps.write('.'))
         .pipe(gulp.dest('public/stylesheets/'));
-        //.pipe(connect.reload());
+    //.pipe(connect.reload());
 });
 
 
@@ -162,13 +175,13 @@ gulp.task('build-svg', function () {
 
 
 // Copy Fonts
-gulp.task('build-fonts', function() {
+gulp.task('build-fonts', function () {
     return gulp.src('public_dev/images/fonts/**/*.{ttf,woff,eof,svg}')
         .pipe(gulp.dest('public/images/fonts/'));
 });
 
 // Copy icons
-gulp.task('build-icons', function() {
+gulp.task('build-icons', function () {
     return gulp.src('public_dev/images/icons/**/*.+(png|jpg|jpeg|gif|ico)')
         // Caching images that ran through imagemin
         // .pipe(cache(imagemin({
@@ -199,13 +212,20 @@ gulp.task('watch', function () {
     gulp.watch(['public_dev/images/**/*.+(png|jpg|jpeg|gif)'], ['build-images']);
     gulp.watch(['public_dev/images/svg/**/*.svg'], ['build-svg']);
     gulp.watch(['public_dev/images/icons/**/*.+(png|jpg|jpeg|gif|ico)'], ['build-icons']);
+    gulp.watch(['public_dev/index.html'], ['build-usemin']);
+    
     gulp.watch(['public_dev/bower_components/**/*'], ['build-bowercomponents']);
 
-    
+
     gulp.watch('public_dev/ng/**/*', ['build-ng']);
     gulp.watch('public_dev/**/*', connect.reload);
 });
 
+gulp.task('livereload', function () {
+    gulp.src(['public/**/*.*'])
+        .pipe(watch(['public/**/*.*']))
+        .pipe(connect.reload());
+});
 
 gulp.task("clear:project", function (callback) {
     runSequence('clean:project', 'build-clean', 'build-cache',
@@ -214,10 +234,10 @@ gulp.task("clear:project", function (callback) {
 });
 
 gulp.task('build', function (callback) {
-    runSequence(['build-ng', 'build-bowercomponents','build-fonts','build-icons', 'build-svg', 'build-coffee', 'build-images', 'build-sass', 'build-less', 'build-html', 'build-stylus', 'build-css', 'build-js'],
+    runSequence(['build-ng', 'build-bowercomponents', 'build-fonts', 'build-icons', 'build-svg', 'build-coffee', 'build-images', 'build-sass', 'build-less', 'build-html', 'build-stylus', 'build-css', 'build-js'],
         callback);
 });
 
 
 
-gulp.task('default', ['build-connect', 'watch', 'build']);
+gulp.task('default', ['build-connect', 'livereload', 'watch', 'build']);
