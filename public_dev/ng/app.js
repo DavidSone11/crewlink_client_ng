@@ -145,6 +145,25 @@ angular
           }
         }
       })
+      .state('dashboard.registration', {
+        templateUrl: 'ng/directives/registration/registration.directive.html',
+        url: '/registration',
+        controller: 'registrationCtrl',
+        resolve: {
+          loadMyFile: function ($ocLazyLoad) {
+            return $ocLazyLoad.load({
+
+              name: 'crewLinkNgApp',
+              files: ['ng/controllers/registration.controller.js',
+                'ng/directives/registration/registration.directive.js'
+              ]
+            });
+
+          }
+        }
+      })
+
+
       .state('dashboard.table', {
         templateUrl: 'ng/directives/table.html',
         url: '/table'
