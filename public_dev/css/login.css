@@ -31,7 +31,7 @@
   }
 
   .success {
-    border: solid 1px #DFF2BF;
+    border: solid 1px green;
   }
 
   .warning{
@@ -41,3 +41,9 @@ border: solid 1px #FEEFB3;
  .error{
    border: 1px solid red!important;
  }
+
+ .fa-asterisk{
+   font-size: 10px!important;
+ }
+
+ 

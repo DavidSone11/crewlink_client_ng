@@ -52,7 +52,7 @@ angular.module('crewLinkNgApp')
 
     };
 
-    $scope.checkEmpty = function () {
+    $scope.checkUser = function () {
 
       if ($scope.userobj.username == "" || typeof ($scope.userobj.username) == 'undefined') {
         $scope.isUserFieldError = true;
@@ -60,9 +60,6 @@ angular.module('crewLinkNgApp')
       } else if ($scope.userobj.username !== "" || typeof ($scope.userobj.username) !== 'undefined') {
         $scope.isUserFieldError = false;
       }
-
-
-
     };
 
     $scope.CheckPassowrd = function () {
