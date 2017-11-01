@@ -10,18 +10,30 @@
                     <fieldset>
                         <form role="form" name="loginForm" novalidate ng-submit='loginForm.$valid && login()'>
                             <div class="form-group">
-                                <input class="form-control" placeholder="username" name="username" type="text" ng-model="userobj.username" ng-class="{error:isUserFieldError}" ng-blur="checkEmpty()"
-                                    ng-required="true">
+                                <input class="form-control" placeholder="username" name="username" type="text" ng-model="userobj.username" ng-class="{error:isUserFieldError,success : !isUserFieldError}"
+                                    ng-blur="checkEmpty()" ng-required="true">
 
-                                
+                                    <span style="color: red"
+                                    ng-show="isUserFieldError">
+                                    <span ng-show="loginForm.username.$error.required">User Name
+                                        is required.</span>
+                                </span>
 
                             </div>
                             <div class="form-group">
-                                <input class="form-control " placeholder="Password" name="password" type="{{inputType}}" ng-model="userobj.password" ng-class="{error:isPasswordFieldError}" ng-blur="CheckPassowrd()"
-                                    ng-required="true">
-                                <span ng-click="hideShowPassword()" class="col-sm-offset-10 col-sm-2" style="cursor: pointer; pointer-events: all;">
+                                <input class="form-control " placeholder="Password" name="password" type="{{inputType}}" ng-model="userobj.password" ng-class="{error:isPasswordFieldError}"
+                                    ng-blur="CheckPassowrd()" ng-required="true">
+                                
+                                    <span style="color: red"
+                                    ng-show="isPasswordFieldError">
+                                    <span ng-show="loginForm.password.$error.required">Password
+                                        is required.</span>
+                                </span>
+                                    <span ng-click="hideShowPassword()" class="col-sm-offset-10 col-sm-2" style="cursor: pointer; pointer-events: all;">
                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                 </span>
+
+                             
 
 
                             </div>
