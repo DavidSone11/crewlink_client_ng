@@ -26,4 +26,18 @@
     padding: 7px;
   }
 
- 
+  .info {
+    border: solid 1px #BDE5F8;
+  }
+
+  .success {
+    border: solid 1px #DFF2BF;
+  }
+
+  .warning{
+border: solid 1px #FEEFB3;
+
+  }
+ .error{
+   border: 1px solid red!important;
+ }

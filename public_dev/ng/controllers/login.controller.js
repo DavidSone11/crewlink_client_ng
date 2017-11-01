@@ -12,6 +12,8 @@ angular.module('crewLinkNgApp')
 
     $scope.isLoginUser = false;
     $scope.isLoginPassword = false;
+    $scope.isUserFieldError = false;
+    $scope.isPasswordFieldError = false;
 
     $scope.userobj = {
       'username': '',
@@ -49,6 +51,29 @@ angular.module('crewLinkNgApp')
 
 
     };
+
+    $scope.checkEmpty = function () {
+
+      if ($scope.userobj.username == "" || typeof ($scope.userobj.username) == 'undefined') {
+        $scope.isUserFieldError = true;
+        $scope.isPasswordFieldError = false;
+      } else if ($scope.userobj.username !== "" || typeof ($scope.userobj.username) !== 'undefined') {
+        $scope.isUserFieldError = false;
+      }
+
+
+
+    };
+
+    $scope.CheckPassowrd = function () {
+      if ($scope.userobj.password == "" || typeof ($scope.userobj.password) == 'undefined') {
+        $scope.isPasswordFieldError = true;
+      } else if ($scope.userobj.password !== "" || typeof ($scope.userobj.password) !== 'undefined') {
+        $scope.isPasswordFieldError = false;
+      }
+    };
+
+
 
 
   });
