@@ -31,24 +31,22 @@ angular.module('crewLinkNgApp')
     };
 
     $scope.login = function () {
+      
+      if ($scope.userobj.username == 'admin' && $scope.userobj.password=='admin') {
+        $location.path("/dashboard/home");
+        //$window.location.href = '/index.html';
+        // $scope.isLoginUser = false;
+        //$scope.isLoginPassword = false;
+      } //else {
+       // $scope.isLoginUser = !$scope.isLoginUser;
+       // $scope.isLoginPassword = !$scope.isLoginPassword;
+      //}
 
-      if ($scope.userobj.username == 'admin') {
-        $scope.isLoginUser = false;
-        $scope.isLoginPassword = false;
-      } else {
-        $scope.isLoginUser = !$scope.isLoginUser;
-        $scope.isLoginPassword = !$scope.isLoginPassword;
-      }
-
-      if ($scope.userobj.password == 'admin') {
-        $scope.isLoginPassword = false;
-      } else {
-        $scope.isLoginPassword = !$scope.isLoginPassword;
-      }
-
-      $location.url("dashboard.home");
-
-
+     // if ($scope.userobj.password == 'admin') {
+      //  $scope.isLoginPassword = false;
+     // } else {
+       // $scope.isLoginPassword = !$scope.isLoginPassword;
+     // }
 
     };
 
