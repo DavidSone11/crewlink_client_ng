@@ -7,7 +7,7 @@ angular.module('crewLinkNgApp')
             restrict: 'E',
             controller: function ($scope) {
 
-                console.log("at login directive");
+                
             }
 
         };
