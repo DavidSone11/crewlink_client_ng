@@ -158,7 +158,8 @@ angular
               files: [
                 'ng/controllers/registration.controller.js',
                 'ng/directives/registration/registration.directive.js',
-                'ng/customdirective/switch.js'
+                'ng/customdirective/switch.js',
+                'ng/customdirective/custom_switch.js'
               ]
             });
 

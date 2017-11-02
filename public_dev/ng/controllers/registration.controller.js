@@ -25,8 +25,11 @@ angular.module('crewLinkNgApp')
         ];
 
         $scope.userRegisteration = {};
+        $scope.checkstatus = false;
 
-        console.log($scope.userRegisteration);
+        console.log($scope.checkstatus);
+
+        
 
         
        

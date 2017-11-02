@@ -14,7 +14,7 @@ i.inactive {color: #d9534f}
     line-height: 1.42;
     border: 0px;
     border-radius: 15px;
-
+    cursor: pointer; 
 }
 .btn-circle-off {
     width: 60px;
@@ -27,5 +27,6 @@ i.inactive {color: #d9534f}
     font-size: 12px;
     line-height: 1.42;
     border-radius: 15px;
+    cursor: pointer; 
 }
 
