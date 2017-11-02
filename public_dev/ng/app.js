@@ -93,7 +93,8 @@ angular
                 'ng/directives/timeline/timeline.js',
                 'ng/directives/notifications/notifications.js',
                 'ng/directives/chat/chat.js',
-                'ng/directives/dashboard/stats/stats.js'
+                'ng/directives/dashboard/stats/stats.js',
+
               ]
             });
           }
@@ -154,8 +155,10 @@ angular
             return $ocLazyLoad.load({
 
               name: 'crewLinkNgApp',
-              files: ['ng/controllers/registration.controller.js',
-                'ng/directives/registration/registration.directive.js'
+              files: [
+                'ng/controllers/registration.controller.js',
+                'ng/directives/registration/registration.directive.js',
+                'ng/customdirective/switch.js'
               ]
             });
 

@@ -1,4 +1,4 @@
-'use strict';
+' use strict';
 
 /**
  * @ngdoc directive
@@ -6,13 +6,13 @@
  * @description
  * # adminPosHeader
  */
-angular.module('crewLinkNgApp')
-	.directive('header',function(){
+var app = angular.module('crewLinkNgApp');
+	app.directive('header',function(){
 		return {
         templateUrl:'ng/directives/header/header.tmpl.html',
         restrict: 'E',
         replace: true,
-    	}
+    	};
 	});
 
 
