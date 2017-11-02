@@ -7,7 +7,7 @@
  * # adminPosHeader
  */
 var app = angular.module('crewLinkNgApp');
-app.directive('customSwitch', function () {
+app.directive('customSwitch', ['$parse', '$http', '$compile', '$templateCache', function($parse, $http, $compile, $templateCache){
 	return {
 		templateUrl: 'ng/customdirective/custom_switch.tmpl.html',
 		restrict: 'E',
@@ -27,19 +27,15 @@ app.directive('customSwitch', function () {
 					angular.element(e.target).removeClass('btn-circle-on');
 					angular.element(e.target).addClass('btn-circle-off');
 					angular.element(document.querySelector('#toggleElement')).html("OFF");
-					scope.$apply(function () {
-						scope.status = false;
-					});
-
+					scope.status = false;
+					//$compile(elem.contents())(scope);
 
 				} else {
 					angular.element(e.target).removeClass('btn-circle-off');
 					angular.element(e.target).addClass('btn-circle-on');
 					angular.element(document.querySelector('#toggleElement')).html("ON");
-
-					scope.$apply(function () {
-						scope.status = true;
-					});
+					scope.status = true;
+					//$compile(elem.contents())(scope);
 				}
 
 			});
@@ -55,7 +51,7 @@ app.directive('customSwitch', function () {
 
 
 	};
-});
+}]);
 
 
 

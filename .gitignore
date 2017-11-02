@@ -5,5 +5,7 @@ npm-debug.log
 bower_components
 .idea
 /public_dev/bower_components/
+/public_dev/components/
 /public/bower_components/
+/public_dev/components/
 /public/

@@ -25,10 +25,18 @@
     "angular-scenario": "1.2.16",
     "d3": "^4.11.0",
     "AngularJS-Toaster": "angularjs-toaster#^2.2.0",
-    "angular-base64": "^2.0.5"
+    "angular-base64": "^2.0.5",
+    "angular-datatables": "^4.4.1"
   },
   "resolutions": {
     "bootstrap": "~3.1.1"
   },
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "components",
+    "test",
+    "tests"
+  ],
   "appPath": "index"
 }
