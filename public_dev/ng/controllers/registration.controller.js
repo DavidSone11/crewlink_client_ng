@@ -7,7 +7,7 @@
  * Controller of the crewLinkNgApp
  */
 angular.module('crewLinkNgApp')
-    .controller('registrationCtrl', function ($scope, $position, toaster, $location,$http) {
+    .controller('registrationCtrl', function ($scope, $position, toaster, $location, $http) {
 
 
         $scope.roles = [
@@ -24,7 +24,11 @@ angular.module('crewLinkNgApp')
 
         ];
 
-        $scope.userRegisteration ={};
+        $scope.userRegisteration = {};
 
+        console.log($scope.userRegisteration);
+
+        
+       
 
     });

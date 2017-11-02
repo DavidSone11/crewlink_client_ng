@@ -14,16 +14,14 @@ app.directive('switch', function () {
 		replace: true,
 		controller: function ($scope) {
 
-			console.log("DADAS");
-
-			$scope.init = function () {
-				$scope.status = true;
-			};
-
+		
+			$scope.status = true;
+			
 			$scope.changeStatus = function () {
 				$scope.status = !$scope.status;
 			};
 
+		
 		},
 
 

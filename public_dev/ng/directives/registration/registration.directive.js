@@ -6,6 +6,8 @@ angular.module('crewLinkNgApp')
             templateUrl: 'ng/directives/registration/registration.tmpl.html',
             restrict: 'E',
             controller: function ($scope) {
+               
+                    
 
                 
             }

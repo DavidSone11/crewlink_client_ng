@@ -74,12 +74,20 @@ gulp.task('build-usemin', function () {
 
 
 // Copy all js files
-gulp.task('build-js', function () {
+gulp.task('build-js-minify', function () {
     gulp.src('public_dev/js/**/*.js')
         .pipe(gulp_sourcemaps.init())  /// use to map all *.js files to public_development
         .pipe(minifyjs())
         .pipe(concat('main.min.js'))
         .pipe(gulp_sourcemaps.write('.'))
+        .pipe(gulp.dest('public/javascripts/'));
+});
+
+
+// Copy all js files
+gulp.task('build-js-notminify', function () {
+    gulp.src('public_dev/js/**/*.js')
+        .pipe(concat('main.min.js'))
         .pipe(gulp.dest('public/javascripts/'));
 });
 
@@ -91,7 +99,8 @@ gulp.task('build-sass', function () {
             indentedSyntax: true,
             errLogToConsole: true
         }))
-        .pipe(gulp.dest('public/stylesheets/stylesheets.css'));
+        .pipe(concat('style.min.css'))
+        .pipe(gulp.dest('public/stylesheets/'));
 });
 
 // Copy all css files
@@ -225,7 +234,9 @@ gulp.task('watch', function () {
     gulp.watch(['public_dev/less/**/*.less'], ['build-less']);
     gulp.watch(['public_dev/css/**/*.css'], ['build-css']);
     gulp.watch(['public_dev/stylus/**/*.styl'], ['build-stylus']);
-    gulp.watch(['public_dev/js/**/*.js'], ['build-js']);
+   // gulp.watch(['public_dev/js/**/*.js'], ['build-js-minify']);
+    gulp.watch(['public_dev/js/**/*.js'], ['build-js-notminify']);
+    
     gulp.watch(['public_dev/coffee/**/*.coffee'], ['build-coffee']);
     gulp.watch(['public_dev/images/**/*.+(png|jpg|jpeg|gif)'], ['build-images']);
     gulp.watch(['public_dev/images/svg/**/*.svg'], ['build-svg']);
@@ -252,7 +263,7 @@ gulp.task("clear:project", function (callback) {
 });
 
 gulp.task('build', function (callback) {
-    runSequence(['build-ng', 'build-bowercomponents', 'build-usemin', 'build-fonts', 'build-icons', 'build-svg', 'build-coffee', 'build-images', 'build-sass', 'build-less', /*'build-html',*/ 'build-stylus', 'build-css', 'build-js'],
+    runSequence(['build-ng', 'build-bowercomponents', 'build-usemin', 'build-fonts', 'build-icons', 'build-svg', 'build-coffee', 'build-images', 'build-sass', 'build-less', /*'build-html',*/ 'build-stylus', 'build-css', /*'build-js-minify'*/'build-js-notminify'],
         callback);
 });
 

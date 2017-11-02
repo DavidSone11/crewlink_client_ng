@@ -2,3 +2,30 @@
 .active, .inactive {font-size:40px;cursor:pointer;}
 i.active { color: #5cb85c}
 i.inactive {color: #d9534f}
+
+.btn-circle-on {
+    width: 60px;
+    height: 30px;
+    color:white;
+    text-align: center;
+    background: #5CB85C;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.42;
+    border: 0px;
+    border-radius: 15px;
+
+}
+.btn-circle-off {
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    background: #D9534F;
+    border: 0px;
+    color:white;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.42;
+    border-radius: 15px;
+}
+
