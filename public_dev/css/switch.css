@@ -9,10 +9,11 @@ i.inactive {color: #d9534f}
     color:white;
     text-align: center;
     background: #5CB85C;
+    border: 2px solid #30a230;
     padding: 6px 0;
     font-size: 12px;
     line-height: 1.42;
-    border: 0px;
+    
     border-radius: 15px;
     cursor: pointer; 
 }
@@ -21,7 +22,7 @@ i.inactive {color: #d9534f}
     height: 30px;
     text-align: center;
     background: #D9534F;
-    border: 0px;
+    border: 2px solid #9c0f0f;
     color:white;
     padding: 6px 0;
     font-size: 12px;
