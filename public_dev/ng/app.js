@@ -14,17 +14,18 @@ angular
     'ui.bootstrap',
     'angular-loading-bar',
     'toaster',
-    'base64'
+    'base64',
+    'ngMessages'
     
 
   ])
-  .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
+  .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider','$qProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,$qProvider) {
 
     $ocLazyLoadProvider.config({
       debug: false,
       events: true,
     });
-
+    $qProvider.errorOnUnhandledRejections(false);
     ///$urlRouterProvider.otherwise('/dashboard/home');
     $urlRouterProvider.otherwise('/login');
 
