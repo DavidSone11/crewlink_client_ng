@@ -43,6 +43,8 @@ app.directive('customSwitch', ['$parse', '$http', '$compile', '$templateCache', 
 		},
 		controller: function ($scope) {
 
+		
+
 
 			console.log($scope.$parent.status);
 

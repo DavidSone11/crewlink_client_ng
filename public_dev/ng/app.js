@@ -15,6 +15,7 @@ angular
     'angular-loading-bar',
     'toaster',
     'base64'
+    
 
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
@@ -40,7 +41,9 @@ angular
                   'ng/directives/header/header.js',
                   'ng/directives/header/header-notification/header-notification.js',
                   'ng/directives/sidebar/sidebar.js',
-                  'ng/directives/sidebar/sidebar-search/sidebar-search.js'
+                  'ng/directives/sidebar/sidebar-search/sidebar-search.js',
+                  'ng/utility/currentstate.prototype.js'
+
                 ]
               }),
               $ocLazyLoad.load(

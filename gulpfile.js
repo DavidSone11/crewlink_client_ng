@@ -24,6 +24,7 @@ var uglifyJs = require('gulp-uglify');
 var htmlmin = require('gulp-htmlmin');
 var clean = require('gulp-clean');
 var multiDestination = require('gulp-multi-dest');
+var merge2 = require('merge2');
 
 /**
  * 
@@ -162,8 +163,17 @@ gulp.task('build-images', function () {
 // Copy all bower js files
 gulp.task('build-bowercomponents', function () {
     console.log("bower is updating");
-    return gulp.src('public_dev/bower_components/**/*')
-        .pipe(gulp.dest('public/bower_components/'));
+      var src_first = gulp.src([
+        "public_dev/bower_components/**/*",
+        
+      ])
+      var src_second = gulp.src([
+         "public_dev/components/**/*",
+        
+      ])
+       return merge2(src_first, src_second)
+      .pipe(gulp.dest('public/bower_components/'));
+
 });
 
 // Copy coffee scripts
@@ -258,6 +268,17 @@ gulp.task('livereload', function () {
 
 gulp.task("clear:project", function (callback) {
     runSequence('clean:project', 'build-clean', 'build-cache',
+        callback
+    );
+});
+
+gulp.task('clean:bower', function () {
+    util.log('clean:project', 'clean all the bower directory', util.colors.magenta('123'));
+    return del(['public/bower_components/**/*']);
+    
+});
+gulp.task("clear:bower_components", function (callback) {
+    runSequence('clean:bower',
         callback
     );
 });
