@@ -17,6 +17,10 @@ angular.module('crewLinkNgApp')
         $scope.string = $state.current.name;
         $scope.title = $scope.string.currentTitle('.','>');
 
+        $scope.updateOn = function(){
+            console.log("DASDA");
+        }
+
        
 
         $scope.roles = [

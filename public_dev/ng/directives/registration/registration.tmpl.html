@@ -10,7 +10,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">User Registeration</div>
             <div class="panel-body">
-                <form role="form" name="RegisterForm" novalidate ng-submit='RegisterForm.$valid && register()'>
+                <form name="RegisterForm" novalidate ng-submit='RegisterForm.$valid && register()'>
                     <div class="col-lg-6">
 
                         <div class="form-group has-feedback">
@@ -55,9 +55,10 @@
                                     <i class="fa fa-asterisk" aria-hidden="true"></i> confirm Password is required.</span>
                             </span>
                         </div>
-
-
                     </div>
+
+
+
 
                     <div class="col-lg-6">
                         <div class="form-group has-feedback">
@@ -71,13 +72,12 @@
                         </div>
 
                         <div class="form-group has-feedback">
-                            <input class="form-control " placeholder="Mobile No" name="mobileNo" type="text" ng-model="userRegisteration.mobileNo" ng-required="true">
+                            <input class="form-control " placeholder="Mobile No" name="mobileNo" pattern="^(?=.*?[1-9])[0-9()-]+$" maxlength="10" type="text"
+                                ng-model="userRegisteration.mobileNo" ng-required="true">
                             <i class="glyphicon glyphicon-lock form-control-feedback"></i>
-
-
-                            <span style="color: red" ng-show="isPasswordFieldError">
+                            <span style="color: red" ng-show="RegisterForm.mobileNo.$touched || (RegisterForm.mobileNo.$dirty && RegisterForm.mobileNo.$invalid)">
                                 <span ng-show="RegisterForm.mobileNo.$error.required">
-                                    <i class="fa fa-asterisk" aria-hidden="true"></i> Password is required.</span>
+                                    <i class="fa fa-asterisk" aria-hidden="true"></i> MobileNo is required.</span>
                             </span>
                         </div>
 
@@ -87,8 +87,8 @@
                                 <option value="" selected>--Select Role--</option>
 
                             </select>
-                            <span style="color: red" ng-show="isPasswordFieldError">
-                                <span ng-show="RegisterForm.password.$error.required">
+                            <span style="color: red" ng-show="RegisterForm.role.$dirty">
+                                <span ng-show="RegisterForm.role.$error.required">
                                     <i class="fa fa-asterisk" aria-hidden="true"></i> Password is required.</span>
                             </span>
                         </div>
@@ -108,9 +108,10 @@
                         <!-- <button type="button" class="btn-circle-off" id="togglebtnId"  onclick="toggleState(this)">OFF</button> !-->
                         <!-- <custom-switch status="{{checkstatus}}"></custom-switch>!-->
 
-                        <button type="submit" ng-disabled="RegisterForm.$invalid || RegisterForm.$pristine" class="btn btn-primary btn-md">Save User</button>
+
 
                     </div>
+                    <button type="submit" ng-disabled="RegisterForm.$invalid || RegisterForm.$dirty" class="btn btn-primary btn-md">Save User</button>
                 </form>
             </div>
         </div>
