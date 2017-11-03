@@ -33,7 +33,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="(key,user) in users">
+                            <tr ng-repeat="(key,user) in users" ng-class="{'green': (user.userName == 'santosh'), 'yellow': (user.userName == 'david'), 'red': (user.userName == 'anurag')}">
                                 <td>{{user.userName}}</td>
                                 <td>{{user.firstName}}</td>
                                 <td>{{user.lastName}}</td>
