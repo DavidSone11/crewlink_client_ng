@@ -1,7 +1,7 @@
- .switchActive, .switchInactive {font-size:40px;cursor:pointer;} */  
-.switchActive, .switchInactive {font-size:40px;cursor:pointer;} */
- i.switchActive { color: #5cb85c} */
- i.switchInactive {color: #d9534f} */
+.switchActive,.switchInactive {font-size:40px;cursor:pointer;}   
+.switchActive,.switchInactive {font-size:40px;cursor:pointer;} 
+ i.switchActive { color: #5cb85c} 
+ i.switchInactive {color: #d9534f} 
 
 .btn-circle-on {
     width: 60px;
