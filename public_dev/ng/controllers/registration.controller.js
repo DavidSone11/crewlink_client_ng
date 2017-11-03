@@ -7,7 +7,7 @@
  * Controller of the crewLinkNgApp
  */
 angular.module('crewLinkNgApp')
-    .controller('registrationCtrl', ['$scope', '$state', '$position', 'toaster', '$location', '$http', '$q', '$rootScope', function ($scope, $state, $position, toaster, $location, $http, $q, $rootScope) {
+    .controller('RegistrationController', ['$scope', '$state', '$position', 'toaster', '$location', '$http', '$q', '$rootScope', function ($scope, $state, $position, toaster, $location, $http, $q, $rootScope) {
 
         $scope.userRegisteration = {};
         $scope.checkstatus = false;

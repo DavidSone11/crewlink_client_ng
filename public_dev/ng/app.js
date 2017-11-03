@@ -182,7 +182,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qPr
     .state('dashboard.registration', {
       templateUrl: 'ng/directives/registration/registration.directive.html',
       url: '/registration',
-      controller: 'registrationCtrl',
+      controller: 'RegistrationController',
       resolve: {
         loadMyFile: function ($ocLazyLoad) {
           return $ocLazyLoad.load({
