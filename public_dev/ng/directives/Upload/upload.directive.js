@@ -1,13 +1,13 @@
 ' use strict';
 
-var app = ngular.module('crewLinkNgApp');
+var app = angular.module('crewLinkNgApp');
     app.directive('upload', function() {
         return {
-            templateUrl: 'ng/directives/dashboard/Upload/upload.tmpl.html',
+            templateUrl: 'ng/directives/Upload/upload.tmpl.html',
             restrict: 'E',
             controller: function ($scope) {
 
-                console.log("at chart directive");
+                console.log("at upload directive");
             }
 
         };

@@ -1,13 +1,13 @@
 ' use strict';
 
 var app = angular.module('crewLinkNgApp')
-    app.directive('chat', function() {
+    app.directive('blank', function() {
         return {
-            templateUrl: 'ng/directives/chat/chat.tmpl.html',
+            templateUrl: 'ng/directives/blank/blank.tmpl.html',
             restrict: 'E',
             controller: function ($scope) {
 
-                console.log("at chart directive");
+                console.log("at blank directive");
             }
 
         };

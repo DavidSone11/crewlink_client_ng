@@ -127,8 +127,19 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qPr
       url: '/form'
     })
     .state('dashboard.blank', {
-      templateUrl: 'ng/directives/pages/blank.html',
-      url: '/blank'
+      templateUrl: 'ng/directives/blank/blank.directive.html',
+      url: '/blank',
+      resolve: {
+        loadMyFiles: function ($ocLazyLoad) {
+          return $ocLazyLoad.load({
+            name: 'crewLinkNgApp',
+            files: [
+              
+              'ng/directives/blank/blank.directive.js',
+            ]
+          });
+        }
+      }
     })
     .state('login', {
       templateUrl: 'ng/directives/login/login.directive.html',
@@ -153,7 +164,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qPr
       resolve: {
         loadMyFile: function ($ocLazyLoad) {
           return $ocLazyLoad.load({
-            name: 'crewLinkNgApp',
+            name: 'chart.js',
             files: [
               'bower_components/angular-chart.js/dist/angular-chart.min.js',
               'bower_components/angular-chart.js/dist/angular-chart.css'
@@ -183,7 +194,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qPr
         }
       }
     }).state('dashboard.upload', {
-      templateUrl: 'ng/directives/dashboard/Upload/upload.directive.html',
+      templateUrl: 'ng/directives/Upload/upload.directive.html',
       url: '/upload',
       resolve: {
         loadMyFile: function ($ocLazyLoad) {
@@ -191,7 +202,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qPr
           $ocLazyLoad.load({
             name: 'crewLinkNgApp',
             files: [
-              'ng/directives/dashboard/Upload/upload.directive.js'
+              'ng/directives/Upload/upload.directive.js'
             ]
           });
         }
