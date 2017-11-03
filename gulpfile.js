@@ -242,7 +242,7 @@ gulp.task('build-connect', function () {
 
 gulp.task('browser-sync', function () {
     browserSync.init({
-        port: 8888,
+       // port: 8888,   /// don't change the default port otherwise bowser will behaving in a different way
         server: {
             baseDir: "public",
         },
