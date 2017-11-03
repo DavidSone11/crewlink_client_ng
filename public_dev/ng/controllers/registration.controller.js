@@ -60,7 +60,7 @@ angular.module('crewLinkNgApp')
             }, function errorCallback(response) {
                 if (response.status !== 401) {
                     //return $q.reject(response);
-                    window.location = "ng/errorpages/404.html";
+                    window.location = "ng/errorpages/HTTPS500.html";
                     //  return;
                 }
 

@@ -134,7 +134,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qPr
           return $ocLazyLoad.load({
             name: 'crewLinkNgApp',
             files: [
-              
+
               'ng/directives/blank/blank.directive.js',
             ]
           });
@@ -207,12 +207,12 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qPr
             name: 'crewLinkNgApp',
             files: [
               'ng/directives/chat/chat.directive.js',
-              
+
             ]
           });
 
         }
-      } 
+      }
     }).state('dashboard.userUpload', {
       templateUrl: 'ng/directives/Upload/upload.directive.html',
       url: '/upload',
@@ -222,17 +222,30 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qPr
             name: 'crewLinkNgApp',
             files: [
               'ng/directives/Upload/upload.directive.js',
-              
+
             ]
           });
 
         }
-      } 
+      }
     })
-    .state('dashboard.table', {
-      templateUrl: 'ng/directives/table.html',
-      url: '/table'
+    .state('dashboard.userplan', {
+      template: '<user-plan></user-plan>',
+      url: '/plan',
+      resolve: {
+        loadMyFile: function ($ocLazyLoad) {
+          return $ocLazyLoad.load({
+            name: 'crewLinkNgApp',
+            files: [
+              'ng/directives/UserPlan/userPlan.directive.js',
+
+            ]
+          });
+
+        }
+      }
     })
+
     .state('dashboard.panels-wells', {
       templateUrl: 'ng/directives/ui-elements/panels-wells.html',
       url: '/panels-wells'
