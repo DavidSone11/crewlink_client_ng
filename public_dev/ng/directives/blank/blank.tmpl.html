@@ -1,9 +1,162 @@
-<div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Blank</h1>
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Blank</h1>
     </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <style>
+            .inside {
+                position: absolute;
+                text-indent: 5px;
+                margin-top: 9px;
+                color: green;
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+            .inp {
+                text-indent: 20px;
+            }
+        </style>
+        <div class="panel panel-default">
+            <div class="panel-heading">User Registration</div>
+            <div class="panel-body">
+                <form name="registerForm">
+                    <!-- start of 1nd Coloum !-->
+                    <div class="col-lg-6 ">
+                        <div class="form-group">
+                            <i class="fa fa-user inside"></i>
+                            <input class="form-control inp" id="name" name="name" ng-model="userRegister.name" placeholder="User Name" ng-minlength="6"
+                                ng-maxlength="20" ng-class="{error:isUserFieldError,success : !isUserFieldError}" ng-blur="checkUser()"
+                                required="" tabindex="1" type="text">
+                            <span style="color: red" ng-show="isUserFieldError">
+                                <span class="errorMsg" ng-show="registerForm.name.$error.required">
+                                    <i class="fa fa-asterisk" aria-hidden="true"></i>Username is required.
+                                </span>
+                            </span>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <i class="fa fa-envelope-o inside"></i>
+                            <input class="form-control inp" id="email" name="email" ng-model="userRegister.email" ng-class="{error:isEmailFieldError,success : !isEmailFieldError}"
+                                ng-blur="checkUser()" placeholder="example@domain.com" required="" type="email">
+                            <span style="color: red" ng-show="isEmailFieldError">
+                                <span class="errorMsg" ng-show="registerForm.email.$error.required">
+                                    <i class="fa fa-asterisk" aria-hidden="true"></i>Email is required.
+                                </span>
+                            </span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <i class="fa fa-key inside"></i>
+                            <input class="form-control inp" type="password" placeholder="Password" id="password" ng-model="userRegister.password" name="password"
+                                ng-minlength="6" ng-maxlength="20" ng-class="{error:isPasswordFieldError,success : !isPasswordFieldError}"
+                                ng-blur="checkUser()" required="" type="text">
+                            <span style="color: red" ng-show="isPasswordFieldError">
+                                <span class="errorMsg" ng-show="registerForm.password.$error.required">
+                                    <i class="fa fa-asterisk" aria-hidden="true"></i>Password is required.
+                                </span>
+                            </span>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <i class="fa fa-check inside"></i>
+                            <input class="form-control inp" type="password" placeholder="Confirm Password" id="password" ng-model="userRegister.confirmPassword"
+                                name="confirmPassword" ng-minlength="6" ng-maxlength="20" ng-class="{error:isConfirmPasswordFieldError,success : !isConfirmPasswordFieldError}"
+                                ng-blur="checkUser()" required="" type="text">
+                            <span style="color: red" ng-show="isConfirmPasswordFieldError">
+                                <span class="errorMsg" ng-show="registerForm.confirmPassword.$error.required">
+                                    <i class="fa fa-asterisk" aria-hidden="true"></i>Confirm Password is required.
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- END !-->
+
+
+
+                    <!-- start of 2nd Coloum !-->
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <i class="fa fa-phone inside"></i>
+                            <input class="form-control inp" id="phone" name="phone" ng-model="userRegister.mobileNumber" ng-minlength="10" ng-maxlength="10"
+                                ng-class="{error:isMobileFieldError,success : !isMobileFieldError}" ng-blur="checkUser()" placeholder="Mobile number"
+                                required="" type="text">
+                            <span style="color: red" ng-show="isMobileFieldError">
+                                <span class="errorMsg" ng-show="registerForm.phone.$error.required">
+                                    <i class="fa fa-asterisk" aria-hidden="true"></i>Mobile Number is required.
+                                </span>
+                            </span>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <select class="form-control" ng-model="userRegister.selectedRole" ng-required="true" name="role" ng-options="role.name for role in roles">
+                                <option value="" selected>--Select Role--</option>
+                            </select>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <select class="form-control" ng-model="userRegister.selectedGender" ng-required="true" name="gender" ng-options="gender.name for gender in genders">
+                                <option value="" selected>--Select Gender--</option>
+                            </select>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <i class="fa fa-calendar inside"></i>
+                            <input class="form-control inp" id="dob" name="dob" ng-model="userRegister.mobileNumber" ng-class="{error:isMobileFieldError,success : !isMobileFieldError}"
+                                ng-blur="checkUser()" placeholder="Date of Birth" required="true" type="text">
+                            <span style="color: red" ng-show="isMobileFieldError">
+                                <span class="errorMsg" ng-show="registerForm.phone.$error.required">
+                                    <i class="fa fa-asterisk" aria-hidden="true"></i>Date is required.
+                                </span>
+                            </span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" value="false" ng-model="userRegister.isActive"> {{userRegister.isActive ? 'User Is Active':'User Is Not Active'}}
+                            </label>
+
+                        </div>
+
+
+
+
+                    </div>
+
+                    <!-- End !-->
+
+
+                    <!-- New Row !-->
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button type="button" ng-click="registerUser()" ng-disabled="registerForm.$invalid" tabindex="5" value="Sign me up!" class="btn btn-primary btn-md">
+                                <i class="fa fa-floppy-o" aria-hidden="true"></i> Save
+                            </button>
+                            <button type="reset" class="btn btn-danger btn-md" ng-click="reset();">
+                                <i class="fa fa-refresh" aria-hidden="true"></i> Reset</button>
+                        </div>
+                    </div>
+                    <!-- End !-->
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
