@@ -16,18 +16,23 @@ var app = angular
     'toaster',
     'base64'
   ]);
-app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qProvider', '$httpProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $qProvider, $httpProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qProvider', '$httpProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $qProvider, $httpProvider, $locationProvider) {
 
   $ocLazyLoadProvider.config({
     debug: false,
     events: true,
   });
   $qProvider.errorOnUnhandledRejections(false); /// error handling for Angular-ui-router
-  /**
-   *          If the Server is Not started How to Handle the Error
-   */
+  
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  });
+  $locationProvider.html5Mode(true).hashPrefix('!');
 
-  $httpProvider.interceptors.push(function ($q,$rootScope) {
+
+  /// if server Not started 
+  $httpProvider.interceptors.push(function ($q, $rootScope) {
     return {
       responseError: function (rejection) {
         if (rejection.status <= 0) {
@@ -36,7 +41,6 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qPr
         return $q.reject(rejection);
       }
     };
-
   });
 
 
@@ -101,6 +105,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qPr
     .state('dashboard.home', {
       url: '/home',
       controller: 'homeCtrl',
+      //controllerAs:"list",
       templateUrl: 'ng/directives/home/home.tmpl.html',
       resolve: {
         loadMyFiles: function ($ocLazyLoad) {
@@ -216,9 +221,9 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qPr
     })
 }]);
 
-app.run(['$rootScope', '$location', function ($rootScope, $location) {
+app.run(['$rootScope', '$location', function AppRun($rootScope, $location) {
   $rootScope.$on('$routeChangeStart', function (event) {
-
+    debugger;
     console.log("Inside Root scope");
   });
 }]);
