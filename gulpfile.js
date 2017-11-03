@@ -25,6 +25,7 @@ var htmlmin = require('gulp-htmlmin');
 var clean = require('gulp-clean');
 var multiDestination = require('gulp-multi-dest');
 var merge2 = require('merge2');
+var browserSync = require('browser-sync').create();
 
 /**
  * 
@@ -58,8 +59,8 @@ gulp.task('build-usemin', function () {
     return gulp.src('public_dev/*.html')
         .pipe(htmlmin({ collapseWhitespace: true }))
         //.pipe(gulp.dest('public/'))
-       // .pipe(multiDestination(['.public/', 'public/javascripts/'], destOptions));
-       .pipe(multiDestination(['public/'], destOptions));
+        // .pipe(multiDestination(['.public/', 'public/javascripts/'], destOptions));
+        .pipe(multiDestination(['public/'], destOptions));
 });
 
 
@@ -110,7 +111,7 @@ gulp.task('build-css', function () {
 
     return gulp.src('public_dev/css/**/*.css')
         .pipe(gulp_sourcemaps.init())
-        .pipe(cssnano({keepBreaks:true}))
+        .pipe(cssnano({ keepBreaks: true }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9'))
         .pipe(concat('style.min.css'))
         //.pipe(rename('style.min.css'))
@@ -163,16 +164,16 @@ gulp.task('build-images', function () {
 // Copy all bower js files
 gulp.task('build-bowercomponents', function () {
     console.log("bower is updating");
-      var src_first = gulp.src([
+    var src_first = gulp.src([
         "public_dev/bower_components/**/*",
-        
-      ])
-      var src_second = gulp.src([
-         "public_dev/components/**/*",
-        
-      ])
-       return merge2(src_first, src_second)
-      .pipe(gulp.dest('public/bower_components/'));
+
+    ])
+    var src_second = gulp.src([
+        "public_dev/components/**/*",
+
+    ])
+    return merge2(src_first, src_second)
+        .pipe(gulp.dest('public/bower_components/'));
 
 });
 
@@ -233,10 +234,24 @@ gulp.task('build-connect', function () {
         root: 'public',
         livereload: true,
         port: process.env.PORT || 8888,
-        debug: true
+        debug: false
     });
     // connect.serverClose(); // run some headless tests with phantomjs 
     // when process exits: 
+});
+
+gulp.task('browser-sync', function () {
+    browserSync.init({
+        port: 8888,
+        server: {
+            baseDir: "public",
+        },
+        watchOptions: {
+            ignoreInitial: true,
+            ignored: '*.txt'
+        },
+
+    });
 });
 
 gulp.task('watch', function () {
@@ -245,9 +260,9 @@ gulp.task('watch', function () {
     gulp.watch(['public_dev/less/**/*.less'], ['build-less']);
     gulp.watch(['public_dev/css/**/*.css'], ['build-css']);
     gulp.watch(['public_dev/stylus/**/*.styl'], ['build-stylus']);
-   // gulp.watch(['public_dev/js/**/*.js'], ['build-js-minify']);
+    // gulp.watch(['public_dev/js/**/*.js'], ['build-js-minify']);
     gulp.watch(['public_dev/js/**/*.js'], ['build-js-notminify']);
-    
+
     gulp.watch(['public_dev/coffee/**/*.coffee'], ['build-coffee']);
     gulp.watch(['public_dev/images/**/*.+(png|jpg|jpeg|gif)'], ['build-images']);
     gulp.watch(['public_dev/images/svg/**/*.svg'], ['build-svg']);
@@ -258,13 +273,21 @@ gulp.task('watch', function () {
 
 
     gulp.watch('public_dev/ng/**/*', ['build-ng']);
-    gulp.watch('public_dev/**/*', connect.reload);
+    //gulp.watch('public_dev/**/*', connect.reload);
+    gulp.watch('public_dev/**/*', browserSync.reload({ stream: true }));
+
 });
 
 gulp.task('livereload', function () {
     gulp.src(['public/**/*.*'])
         .pipe(watch(['public/**/*.*']))
         .pipe(connect.reload());
+});
+
+gulp.task('browser-sync-livereload', function () {
+    gulp.src(['public/**/*.*'])
+        .pipe(watch(['public/**/*.*']))
+        .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task("clear:project", function (callback) {
@@ -276,7 +299,7 @@ gulp.task("clear:project", function (callback) {
 gulp.task('clean:bower', function () {
     util.log('clean:project', 'clean all the bower directory', util.colors.magenta('123'));
     return del(['public/bower_components/**/*']);
-    
+
 });
 gulp.task("clear:bower_components", function (callback) {
     runSequence('clean:bower',
@@ -291,4 +314,5 @@ gulp.task('build', function (callback) {
 
 
 
-gulp.task('default', ['build-connect', 'livereload', 'watch', 'build']);
+//gulp.task('default', ['build-connect', 'livereload', 'watch', 'build']);
+gulp.task('default', ['browser-sync', 'browser-sync-livereload', 'watch', 'build']);

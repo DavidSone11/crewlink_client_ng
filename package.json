@@ -46,6 +46,7 @@
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
+    "browser-sync": "^2.18.13",
     "jshint-stylish": "^2.2.1",
     "merge2": "^1.2.0"
   }
