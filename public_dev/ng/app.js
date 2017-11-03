@@ -23,7 +23,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qPr
     events: true,
   });
   $qProvider.errorOnUnhandledRejections(false); /// error handling for Angular-ui-router
-  
+
   $locationProvider.html5Mode({
     enabled: true,
     requireBase: false
@@ -115,7 +115,6 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qPr
               'ng/controllers/home.js',
               'ng/directives/timeline/timeline.js',
               'ng/directives/notifications/notifications.js',
-              'ng/directives/chat/chat.js',
               'ng/directives/dashboard/stats/stats.js',
 
             ]
@@ -166,6 +165,35 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qPr
                 'ng/directives/dashboard/chart/chart.directive.js'
               ]
             });
+        }
+      }
+    }).state('dashboard.chat', {
+      templateUrl: 'ng/directives/chat/chat.directive.html',
+      url: '/chat',
+      resolve: {
+        loadMyFile: function ($ocLazyLoad) {
+          return
+          $ocLazyLoad.load({
+            name: 'crewLinkNgApp',
+            files: [
+
+              'ng/directives/chat/chat.directive.js'
+            ]
+          });
+        }
+      }
+    }).state('dashboard.upload', {
+      templateUrl: 'ng/directives/dashboard/Upload/upload.directive.html',
+      url: '/upload',
+      resolve: {
+        loadMyFile: function ($ocLazyLoad) {
+          return
+          $ocLazyLoad.load({
+            name: 'crewLinkNgApp',
+            files: [
+              'ng/directives/dashboard/Upload/upload.directive.js'
+            ]
+          });
         }
       }
     })

@@ -274,7 +274,7 @@ gulp.task('watch', function () {
 
     gulp.watch('public_dev/ng/**/*', ['build-ng']);
     //gulp.watch('public_dev/**/*', connect.reload);
-    gulp.watch('public_dev/**/*', browserSync.reload({ stream: true }));
+    gulp.watch('public_dev/**/*', browserSync.reload);
 
 });
 
@@ -287,7 +287,7 @@ gulp.task('livereload', function () {
 gulp.task('browser-sync-livereload', function () {
     gulp.src(['public/**/*.*'])
         .pipe(watch(['public/**/*.*']))
-        .pipe(browserSync.reload({ stream: true }));
+        .pipe(browserSync.reload);
 });
 
 gulp.task("clear:project", function (callback) {
@@ -315,4 +315,5 @@ gulp.task('build', function (callback) {
 
 
 //gulp.task('default', ['build-connect', 'livereload', 'watch', 'build']);
-gulp.task('default', ['browser-sync', 'browser-sync-livereload', 'watch', 'build']);
+//gulp.task('default', ['browser-sync', 'browser-sync-livereload', 'watch', 'build']);
+gulp.task('default', ['browser-sync','watch', 'build']);
