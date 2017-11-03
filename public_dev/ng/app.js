@@ -178,35 +178,6 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qPr
             });
         }
       }
-    }).state('dashboard.chat', {
-      templateUrl: 'ng/directives/chat/chat.directive.html',
-      url: '/chat',
-      resolve: {
-        loadMyFile: function ($ocLazyLoad) {
-          return
-          $ocLazyLoad.load({
-            name: 'crewLinkNgApp',
-            files: [
-
-              'ng/directives/chat/chat.directive.js'
-            ]
-          });
-        }
-      }
-    }).state('dashboard.upload', {
-      templateUrl: 'ng/directives/Upload/upload.directive.html',
-      url: '/upload',
-      resolve: {
-        loadMyFile: function ($ocLazyLoad) {
-          return
-          $ocLazyLoad.load({
-            name: 'crewLinkNgApp',
-            files: [
-              'ng/directives/Upload/upload.directive.js'
-            ]
-          });
-        }
-      }
     })
     .state('dashboard.registration', {
       templateUrl: 'ng/directives/registration/registration.directive.html',
@@ -227,9 +198,37 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qPr
 
         }
       }
+    }).state('dashboard.userChat', {
+      templateUrl: 'ng/directives/chat/chat.directive.html',
+      url: '/chat',
+      resolve: {
+        loadMyFile: function ($ocLazyLoad) {
+          return $ocLazyLoad.load({
+            name: 'crewLinkNgApp',
+            files: [
+              'ng/directives/chat/chat.directive.js',
+              
+            ]
+          });
+
+        }
+      } 
+    }).state('dashboard.userUpload', {
+      templateUrl: 'ng/directives/Upload/upload.directive.html',
+      url: '/upload',
+      resolve: {
+        loadMyFile: function ($ocLazyLoad) {
+          return $ocLazyLoad.load({
+            name: 'crewLinkNgApp',
+            files: [
+              'ng/directives/Upload/upload.directive.js',
+              
+            ]
+          });
+
+        }
+      } 
     })
-
-
     .state('dashboard.table', {
       templateUrl: 'ng/directives/table.html',
       url: '/table'

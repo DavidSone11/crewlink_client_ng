@@ -315,5 +315,5 @@ gulp.task('build', function (callback) {
 
 
 //gulp.task('default', ['build-connect', 'livereload', 'watch', 'build']);
-gulp.task('default', ['browser-sync', 'browser-sync-livereload', 'watch', 'build']);
+gulp.task('default', ['browser-sync', 'watch', 'build']);
 

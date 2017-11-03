@@ -5,6 +5,7 @@ var app = angular.module('crewLinkNgApp');
         return {
             templateUrl: 'ng/directives/Upload/upload.tmpl.html',
             restrict: 'E',
+            replace: true,
             controller: function ($scope) {
 
                 console.log("at upload directive");
