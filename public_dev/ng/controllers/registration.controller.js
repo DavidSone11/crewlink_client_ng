@@ -7,21 +7,19 @@
  * Controller of the crewLinkNgApp
  */
 angular.module('crewLinkNgApp')
-    .controller('registrationCtrl',['$scope','$state','$position', 'toaster', '$location', '$http', function ($scope,$state, $position, toaster, $location, $http) {
+    .controller('registrationCtrl', ['$scope', '$state', '$position', 'toaster', '$location', '$http', '$q', '$rootScope', function ($scope, $state, $position, toaster, $location, $http, $q, $rootScope) {
 
         $scope.userRegisteration = {};
         $scope.checkstatus = false;
         $scope.users = [];
 
-        
+
         $scope.string = $state.current.name;
-        $scope.title = $scope.string.currentTitle('.','>');
+        $scope.title = $scope.string.currentTitle('.', '>');
 
-        $scope.updateOn = function(){
-            console.log("DASDA");
-        }
 
-       
+
+
 
         $scope.roles = [
             { 'name': 'admin' },
@@ -38,7 +36,7 @@ angular.module('crewLinkNgApp')
         ];
 
         $scope.register = function () {
-            console.log(""+ $scope.userRegisteration);
+            console.log("" + $scope.userRegisteration);
         }
 
 
@@ -51,14 +49,20 @@ angular.module('crewLinkNgApp')
                 order: 'userName'
             };
 
-            $http.get(url, { params: options }).then(function success(successResponse) {
+            $http.get(url, { params: options }).then(function successCallback(successResponse) {
                 $scope.users = successResponse.data.results;
                 $scope.currentPage = successResponse.data.current;
                 $scope.perPage = successResponse.data.options.perPage;
                 $scope.totalPages = successResponse.data.last;
                 $scope.totalRecords = successResponse.data.count;
 
-            }, function error(errorResponse) {
+            }, function errorCallback(response) {
+                if (response.status !== 401) {
+                    //return $q.reject(response);
+                    window.location = "ng/errorpages/404.html";
+                    //  return;
+                }
+
 
             });
 

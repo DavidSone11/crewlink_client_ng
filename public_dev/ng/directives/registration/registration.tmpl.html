@@ -79,8 +79,8 @@
                             <input class="form-control " placeholder="Mobile No" name="mobileNo" pattern="^(?=.*?[1-9])[0-9()-]+$" maxlength="10" type="text"
                                 ng-model="userRegisteration.mobileNo" required>
                             <i class="glyphicon glyphicon-lock form-control-feedback"></i>
-                            <span style="color: red" ng-messages="RegisterForm.mobileNo.$touched || (RegisterForm.mobileNo.$dirty && RegisterForm.mobileNo.$invalid)">
-                                <span ng-message="RegisterForm.mobileNo.$error.required">
+                            <span style="color: red" ng-show="RegisterForm.mobileNo.$touched || (RegisterForm.mobileNo.$dirty && RegisterForm.mobileNo.$invalid)">
+                                <span ng-show="RegisterForm.mobileNo.$error.required">
                                     <i class="fa fa-asterisk" aria-hidden="true"></i> MobileNo is required.</span>
                             </span>
                         </div>
