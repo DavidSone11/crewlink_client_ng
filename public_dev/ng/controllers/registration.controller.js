@@ -12,6 +12,7 @@ angular.module('crewLinkNgApp')
         $scope.userRegisteration = {};
         $scope.checkstatus = false;
         $scope.users = [];
+        $scope.blankuserdetails = {};
 
 
         $scope.string = $state.current.name;
@@ -74,6 +75,11 @@ angular.module('crewLinkNgApp')
             var index = $scope.users.indexOf(user);
             $scope.users.splice(index, 1);
         };
+
+        $scope.reset = function(){
+            $scope.users = angular.copy($scope.blankuserdetails);
+            $scope.RegisterForm.$setPristine();
+        }
 
 
 

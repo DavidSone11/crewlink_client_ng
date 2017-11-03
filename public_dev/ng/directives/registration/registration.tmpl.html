@@ -105,13 +105,21 @@
                             </select>
                         </div>
 
-                        <input type="checkbox" ng-required="true" ng-model="userRegisteration.isActive">{{ userRegisteration.isActive ? 'User Is Active':'User Is Not Active' }}
-                        <br>
+                        <div class="form-group">
+                            <label class="control-label">Account Status</label>
+                            <div class="radio-inline">
+                                <label>
+                                    <input type="checkbox" value="false" ng-model="userRegisteration.isActive"> {{userRegisteration.isActive ? 'User Is Active':'User Is Not Active'}}
+                                </label>
+                            </div>
+                        </div>
+
 
                         <!--<switch></switch> !-->
                         <!-- <button type="button" class="btn-circle-off" id="togglebtnId"  onclick="toggleState(this)">OFF</button> !-->
                         <!-- <custom-switch status="{{checkstatus}}"></custom-switch>!-->
-                        <button type="submit" ng-disabled="RegisterForm.$invalid || RegisterForm.$dirty" class="btn btn-primary btn-md">Save User</button>
+                        <button type="submit" ng-disabled="RegisterForm.$invalid || RegisterForm.$dirty" class="btn btn-primary btn-md glyphicon glyphicon-saved">Save</button>
+                        <button type="reset" class="btn btn-danger btn-md" ng-click="reset();"><i class="fa fa-refresh" aria-hidden="true"></i> Reset</button>
 
                     </form>
                 </div>

@@ -232,7 +232,8 @@ gulp.task('build-connect', function () {
         name: 'CrewLink Application :',
         root: 'public',
         livereload: true,
-        port: 8888
+        port: process.env.PORT || 8888,
+        debug: true
     });
     // connect.serverClose(); // run some headless tests with phantomjs 
     // when process exits: 
