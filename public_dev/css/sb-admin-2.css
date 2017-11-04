@@ -1,18 +1,13 @@
-/*!
- * Start Bootstrap - SB Admin 2 Bootstrap Admin Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
 
  body {
-    background-color: #f8f8f8;
-    padding-bottom: 20px;
+    background-color: #ffffff;
+    
 }
 
 
 .header {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   
   
@@ -70,9 +65,7 @@
 .navbar-top-links {
     margin-right: 0;
 }
-.navbar-top-links-left {
-    margin-left: 0;
-}
+
 
 .navbar-top-links li {
     display: inline-block;
@@ -127,6 +120,26 @@
     right: 0;
     left: auto;
 }
+
+/**
+      left header-notification
+*/
+
+.navbar-top-links-left {
+    margin-left: 0;
+}
+.navbar-top-links-left li {
+    display: inline-block;
+}
+
+.navbar-top-links-left .dropdown-menu li a {
+    padding: 3px 20px;
+    min-height: 0;
+}
+.navbar-top-links-left .dropdown-menu li {
+    display: block;
+}
+
 
 .sidebar .sidebar-nav.navbar-collapse {
     padding-right: 0;
