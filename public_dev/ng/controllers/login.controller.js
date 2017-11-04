@@ -7,13 +7,14 @@
  * Controller of the crewLinkNgApp
  */
 angular.module('crewLinkNgApp')
-  .controller('loginCtrl', function ($scope, toaster, $location, $base64) {
+  .controller('LoginController', function ($scope, toaster, $location, $base64) {
 
 
     $scope.isLoginUser = false;
     $scope.isLoginPassword = false;
     $scope.isUserFieldError = false;
     $scope.isPasswordFieldError = false;
+    $scope.colorpallet = ""
 
     $scope.userobj = {
       'username': '',

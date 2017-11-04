@@ -7,7 +7,7 @@
  * Controller of the sbAdminApp
  */
 angular.module('crewLinkNgApp')
-  .controller('ChartCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
+  .controller('ChartController', ['$scope', '$timeout', function ($scope, $timeout) {
     $scope.line = {
 	    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 	    series: ['Series A', 'Series B'],

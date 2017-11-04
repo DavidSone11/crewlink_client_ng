@@ -7,7 +7,7 @@
  * Controller of the crewLinkNgApp
  */
 angular.module('crewLinkNgApp')
-  .controller('homeCtrl', function ($scope, toaster) {
+  .controller('HomeController', function ($scope, toaster) {
 
 
      

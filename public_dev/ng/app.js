@@ -104,7 +104,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider','$http
     })
     .state('dashboard.home', {
       url: '/home',
-      controller: 'homeCtrl',
+      controller: 'HomeController',
       //controllerAs:"list",
       templateUrl: 'ng/directives/home/home.tmpl.html',
       resolve: {
@@ -112,7 +112,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider','$http
           return $ocLazyLoad.load({
             name: 'crewLinkNgApp',
             files: [
-              'ng/controllers/home.js',
+              'ng/controllers/home.controller.js',
               'ng/directives/timeline/timeline.js',
               'ng/directives/notifications/notifications.js',
               'ng/directives/dashboard/stats/stats.js',
@@ -144,7 +144,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider','$http
     .state('login', {
       templateUrl: 'ng/directives/login/login.directive.html',
       url: '/login',
-      controller: 'loginCtrl',
+      controller: 'LoginController',
       resolve: {
         loadMyFiles: function ($ocLazyLoad) {
           return $ocLazyLoad.load({
@@ -160,7 +160,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider','$http
     .state('dashboard.chart', {
       templateUrl: 'ng/directives/dashboard/chart/chart.directive.html',
       url: '/chart',
-      controller: 'ChartCtrl',
+      controller: 'ChartController',
       resolve: {
         loadMyFile: function ($ocLazyLoad) {
           return $ocLazyLoad.load({
