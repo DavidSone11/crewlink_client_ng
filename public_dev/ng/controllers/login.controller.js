@@ -7,7 +7,7 @@
  * Controller of the crewLinkNgApp
  */
 angular.module('crewLinkNgApp')
-  .controller('loginCtrl', function ($scope, $position, toaster, $location, $base64) {
+  .controller('loginCtrl', function ($scope, toaster, $location, $base64) {
 
 
     $scope.isLoginUser = false;
