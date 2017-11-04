@@ -11,7 +11,7 @@ angular.module('crewLinkNgApp')
 		return {
         templateUrl:'ng/directives/header/header-notification/header-notification.tmpl.html',
         restrict: 'E',
-        replace: true,
+        replace: false,
     	}
 	});
 

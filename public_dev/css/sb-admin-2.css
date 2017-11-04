@@ -70,6 +70,9 @@
 .navbar-top-links {
     margin-right: 0;
 }
+.navbar-top-links-left {
+    margin-left: 0;
+}
 
 .navbar-top-links li {
     display: inline-block;
