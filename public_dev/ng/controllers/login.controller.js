@@ -14,7 +14,7 @@ angular.module('crewLinkNgApp')
     $scope.isLoginPassword = false;
     $scope.isUserFieldError = false;
     $scope.isPasswordFieldError = false;
-    $scope.colorpallet = ""
+    
 
     $scope.userobj = {
       'username': '',

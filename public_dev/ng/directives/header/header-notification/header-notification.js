@@ -11,7 +11,12 @@ angular.module('crewLinkNgApp')
 		return {
         templateUrl:'ng/directives/header/header-notification/header-notification.tmpl.html',
         restrict: 'E',
-        replace: false,
+		replace: false,
+		controller:function($scope){
+			$scope.colorpallet = "Hiiiii";
+
+			console.log($scope.colorpallet);
+		}
     	}
 	});
 
