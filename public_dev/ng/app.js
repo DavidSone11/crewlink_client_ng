@@ -16,13 +16,13 @@ var app = angular
     'toaster',
     'base64'
   ]);
-app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$qProvider', '$httpProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $qProvider, $httpProvider, $locationProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider','$httpProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,$httpProvider, $locationProvider) {
 
   $ocLazyLoadProvider.config({
     debug: false,
     events: true,
   });
-  $qProvider.errorOnUnhandledRejections(false); /// error handling for Angular-ui-router
+  //$qProvider.errorOnUnhandledRejections(false); /// error handling for Angular-ui-router
 
   $locationProvider.html5Mode({
     enabled: true,
