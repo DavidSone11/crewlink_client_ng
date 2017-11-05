@@ -1,5 +1,5 @@
 (function () {
-  "use strict";
+  " use strict";
   /**
    * @ngdoc overview
    * @name crewLinkNgApp
@@ -16,7 +16,9 @@
       'angular-loading-bar',
       'toaster',
       'base64',
-      'validation.match'
+      'validation.match',
+      'chart.js'
+      
     ]);
   app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$httpProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $httpProvider, $locationProvider) {
 
@@ -159,28 +161,7 @@
           }
         }
       })
-      .state('dashboard.chart', {
-        templateUrl: 'ng/directives/dashboard/chart/chart.directive.html',
-        url: '/chart',
-        controller: 'ChartController',
-        resolve: {
-          loadMyFile: function ($ocLazyLoad) {
-            return $ocLazyLoad.load({
-              name: 'chart.js',
-              files: [
-                'bower_components/angular-chart.js/dist/angular-chart.min.js',
-                'bower_components/angular-chart.js/dist/angular-chart.css'
-              ]
-            }),
-              $ocLazyLoad.load({
-                name: 'crewLinkNgApp',
-                files: ['ng/controllers/chart.contoller.js',
-                  'ng/directives/dashboard/chart/chart.directive.js'
-                ]
-              });
-          }
-        }
-      })
+      
       .state('dashboard.registration', {
         templateUrl: 'ng/directives/registration/registration.directive.html',
         url: '/registration',
@@ -209,6 +190,23 @@
               name: 'crewLinkNgApp',
               files: [
                 'ng/directives/chat/chat.directive.js',
+
+              ]
+            });
+
+          }
+        }
+      }).state('dashboard.userChart', {
+        templateUrl: 'ng/directives/userchart/userchart.directive.html',
+        url: '/chart',
+        controller:'UserChartController',
+        resolve: {
+          loadMyFile: function ($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name: 'crewLinkNgApp',
+              files: [
+                'ng/directives/userchart/userchart.directive.js',
+                'ng/controllers/userchart.controller.js',
 
               ]
             });
