@@ -37,6 +37,7 @@
   ],
   "appPath": "index",
   "devDependencies": {
-    "angular-validation-match": "^1.9.0"
+    "angular-validation-match": "^1.9.0",
+    "angular-daterangepicker": "^0.2.2"
   }
 }
