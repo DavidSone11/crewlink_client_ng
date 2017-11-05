@@ -7,11 +7,12 @@
  * Controller of the crewLinkNgApp
  */
 var app = angular.module('crewLinkNgApp');
-app.directive('rightSideBar', function ($scope, $timeout) {
+app.directive('rightSideBar', function () {
 
     return {
-        templateUrl: 'ng/directives/right-sidebar/rightsidebar.tmpl.html',
+        templateUrl: 'ng/directives/right-sidebar/right-sidebar.tmpl.html',
         restrict: 'E',
+        replace: true,
         controller: function ($scope) {
 
 

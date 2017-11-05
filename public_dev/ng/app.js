@@ -20,7 +20,7 @@
       'chart.js'
 
     ]);
-  app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$httpProvider', '$locationProvider', 'ChartJsProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $httpProvider, $locationProvider, ChartJsProvider) {
+  app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$httpProvider', '$locationProvider', 'ChartJsProvider','cfpLoadingBarProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $httpProvider, $locationProvider, ChartJsProvider,cfpLoadingBarProvider) {
 
     $ocLazyLoadProvider.config({
       debug: false,
@@ -43,6 +43,8 @@
     ChartJsProvider.setOptions('Line', {
       datasetFill: false
     });
+    cfpLoadingBarProvider.includeBar = true;
+    cfpLoadingBarProvider.spinnerTemplate = '<div><span class="fa fa-spinner fa-2x">Loading...</div>';
 
     /// if server Not started 
     $httpProvider.interceptors.push(function ($q, $rootScope) {
