@@ -38,6 +38,8 @@
     "angular-validation-match": "^1.9.0",
     "angular-daterangepicker": "^0.2.2",
     "chart.js": "^2.7.1",
-    "angular-chart.js": "^1.1.1"
+    "angular-chart.js": "^1.1.1",
+    "c3": "^0.4.18",
+    "bootstrap-side-navbar": "^1.0.1"
   }
 }

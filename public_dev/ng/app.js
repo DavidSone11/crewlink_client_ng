@@ -18,9 +18,9 @@
       'base64',
       'validation.match',
       'chart.js'
-      
+
     ]);
-  app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$httpProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $httpProvider, $locationProvider) {
+  app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$httpProvider', '$locationProvider', 'ChartJsProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $httpProvider, $locationProvider, ChartJsProvider) {
 
     $ocLazyLoadProvider.config({
       debug: false,
@@ -33,7 +33,16 @@
       requireBase: false
     });
     $locationProvider.html5Mode(false).hashPrefix('!');
+    //ChartJsProvider.setOptions({ colors : [ '#FF0000', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
 
+    ChartJsProvider.setOptions({
+      colours: ['#FF5252', '#FF8A80'],
+      responsive: true
+    });
+    // Configure all line charts
+    ChartJsProvider.setOptions('Line', {
+      datasetFill: false
+    });
 
     /// if server Not started 
     $httpProvider.interceptors.push(function ($q, $rootScope) {
@@ -63,8 +72,9 @@
                 files: [
                   'ng/directives/header/header.js',
                   'ng/directives/header/header-notification/header-notification.js',
-                  'ng/directives/sidebar/sidebar.js',
-                  'ng/directives/sidebar/sidebar-search/sidebar-search.js',
+                  'ng/directives/left-sidebar/left-sidebar.js',
+                  'ng/directives/left-sidebar/left-sidebar-search/left-sidebar-search.js',
+                  'ng/directives/right-sidebar/right-sidebar.js',
                   'ng/utility/currentstate.prototype.js'
 
                 ]
@@ -161,7 +171,7 @@
           }
         }
       })
-      
+
       .state('dashboard.registration', {
         templateUrl: 'ng/directives/registration/registration.directive.html',
         url: '/registration',
@@ -199,7 +209,7 @@
       }).state('dashboard.userChart', {
         templateUrl: 'ng/directives/userchart/userchart.directive.html',
         url: '/chart',
-        controller:'UserChartController',
+        controller: 'UserChartController',
         resolve: {
           loadMyFile: function ($ocLazyLoad) {
             return $ocLazyLoad.load({
