@@ -149,7 +149,7 @@
 }
 
 .sidebar .sidebar-search {
-    padding: 15px;
+    padding: 10px 4px 1px 3px;
 }
 
 .sidebar ul li {
@@ -252,16 +252,6 @@
 
 
 
-.show-grid [class^=col-] {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border: 1px solid #ddd;
-    background-color: #eee!important;
-}
-
-.show-grid {
-    margin: 15px 0;
-}
 
 .huge {
     font-size: 40px;
