@@ -35,5 +35,8 @@
     "test",
     "tests"
   ],
-  "appPath": "index"
+  "appPath": "index",
+  "devDependencies": {
+    "angular-validation-match": "^1.9.0"
+  }
 }

@@ -14,7 +14,8 @@ var app = angular
     'ui.bootstrap',
     'angular-loading-bar',
     'toaster',
-    'base64'
+    'base64',
+    'validation.match'
   ]);
 app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider','$httpProvider', '$locationProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider,$httpProvider, $locationProvider) {
 
