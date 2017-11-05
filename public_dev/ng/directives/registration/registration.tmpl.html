@@ -10,12 +10,40 @@
                 position: absolute;
                 text-indent: 5px;
                 margin-top: 9px;
-                color: green;
+                color: #000000;
                 font-weight: bold;
             }
 
             .inp {
                 text-indent: 20px;
+            }
+
+            .select {
+                overflow: hidden;
+                position: relative;
+                display: block;
+            }
+
+            select {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+
+            }
+
+            .select:after {
+                content: "\f0dc";
+                font-family: FontAwesome;
+                color: #000;
+                padding: 12px 8px;
+                position: absolute;
+                right: 0;
+                top: -2px;
+
+                z-index: 1;
+                text-align: center;
+                width: 10%;
+                height: 100%;
+                box-sizing: border-box;
             }
         </style>
 
@@ -63,9 +91,11 @@
                             </span>
                         </div>
 
-                        <div class="form-group has-feedback">
-                            <input class="form-control" placeholder="Create Password" name="password" type="password" ng-model="userRegisteration.password"
+                        <div class="form-group">
+                            <i class="fa fa-key inside" aria-hidden="true"></i>
+                            <input class="form-control inp" placeholder="Create Password" name="password" type="password" ng-model="userRegisteration.password"
                                 ng-required="true">
+
 
                             <span style="color: red" ng-show="isPasswordFieldError">
                                 <span ng-show="RegisterForm.password.$error.required">
@@ -74,9 +104,12 @@
                         </div>
 
 
-                        <div class="form-group has-feedback">
-                            <input class="form-control " placeholder="Confirm Password" name="passwordConfirm" type="password" ng-model="userRegisteration.passwordConfirm"
-                                ng-required="true" match="userRegisteration.password">
+                        <div class="form-group">
+                            <i class="fa fa-key inside" aria-hidden="true"></i>
+                            <input class="form-control inp" placeholder="Confirm Password" name="passwordConfirm" type="password" ng-model="userRegisteration.passwordConfirm"
+                                ng-required="true" match="userRegisteration.password" match-caseless="true">
+                            <div style="color: red" ng-show="RegisterForm.passwordConfirm.$error.match" ng-if="RegisterForm.passwordConfirm.$touched"
+                                role="alert">Passwords do not match</div>
 
                             <span style="color: red" ng-show="isPasswordFieldError">
                                 <span ng-show="RegisterForm.password.$error.required">
@@ -103,9 +136,10 @@
                             </span>
                         </div>
 
-                        <div class="form-group has-feedback">
-                            <input class="form-control " placeholder="Mobile No" name="mobileNo" pattern="^(?=.*?[1-9])[0-9()-]+$" maxlength="10" type="text"
-                                ng-model="userRegisteration.mobileNo" required>
+                        <div class="form-group">
+                            <i class="fa fa-phone inside" aria-hidden="true"></i>
+                            <input class="form-control inp" placeholder="Mobile No" name="mobileNo" pattern="^(?=.*?[1-9])[0-9()-]+$" maxlength="10"
+                                type="text" ng-model="userRegisteration.mobileNo" required>
 
                             <span style="color: red" ng-show="RegisterForm.mobileNo.$touched || (RegisterForm.mobileNo.$dirty && RegisterForm.mobileNo.$invalid)">
                                 <span ng-show="RegisterForm.mobileNo.$error.required">
@@ -115,10 +149,12 @@
 
 
                         <div class="form-group">
-                            <select class="form-control" ng-model="userRegisteration.selectedRole" ng-required="true" name="role" ng-options="role.name for role in roles">
-                                <option value="" selected>--Select Role--</option>
+                            <label class="select">
+                                <select class="form-control" ng-model="userRegisteration.selectedRole" ng-required="true" name="role" ng-options="role.name for role in roles">
+                                    <option value="" disabled>Please Select Role</option>
 
-                            </select>
+                                </select>
+                            </label>
                             <span style="color: red" ng-show="RegisterForm.role.$dirty">
                                 <span ng-show="RegisterForm.role.$error.required">
                                     <i class="fa fa-asterisk" aria-hidden="true"></i> Password is required.</span>
@@ -128,9 +164,10 @@
 
                         <div class="form-group">
 
-                            <label class="control-label" for="mRadio">Gender</label>
+                            <label class="control-label">Gender</label>
                             <input type="radio" ng-model="userRegisteration.selectedGender" value="male" ng-required="true">Male
                             <input type="radio" ng-model="userRegisteration.selectedGender" value="female" ng-required="true">Female
+                            <input type="radio" ng-model="userRegisteration.selectedGender" value="others" ng-required="true">Others
 
                         </div>
 
