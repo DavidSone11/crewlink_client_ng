@@ -109,7 +109,7 @@
                         <div class="form-group">
                             <i class="fa fa-key inside" aria-hidden="true"></i>
                             <input class="form-control inp" placeholder="Confirm Password" name="passwordConfirm" type="password" ng-model="userRegisteration.passwordConfirm"
-                                ng-required="true" match="userRegisteration.password" match-caseless="true">
+                                ng-required="true" match="userRegisteration.password" match-caseless="true" not-match="false" match-ignore-empty="true">
                             <div style="color: red" ng-show="RegisterForm.passwordConfirm.$error.match" ng-if="RegisterForm.passwordConfirm.$touched"
                                 role="alert">Passwords do not match</div>
                             <div style="color: green" ng-show="!(RegisterForm.passwordConfirm.$error.match)" ng-if="!(RegisterForm.passwordConfirm.$touched)"
