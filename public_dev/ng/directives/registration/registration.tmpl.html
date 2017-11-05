@@ -52,12 +52,14 @@
         <div class="panel panel-default">
             <div class="panel-heading">User Registeration</div>
             <div class="panel-body">
-                <form name="RegisterForm" novalidate ng-submit='RegisterForm.$valid && register()'>
+                <form name="RegisterForm" novalidate="novalidate" ng-submit='RegisterForm.$valid && register()'>
                     <div class="col-lg-6">
 
                         <div class="form-group">
+                                
                             <i class="fa fa-address-book inside" aria-hidden="true"></i>
-                            <input class="form-control inp" placeholder="FirstName" name="firstname" type="text" ng-model="userRegisteration.firstname"
+                            <!-- <label for="firstname">FirstName</label> !-->
+                            <input class="form-control inp" id="firstname" placeholder="FirstName" name="firstname" type="text" ng-model="userRegisteration.firstname"
                                 ng-required="true">
 
 
@@ -110,6 +112,8 @@
                                 ng-required="true" match="userRegisteration.password" match-caseless="true">
                             <div style="color: red" ng-show="RegisterForm.passwordConfirm.$error.match" ng-if="RegisterForm.passwordConfirm.$touched"
                                 role="alert">Passwords do not match</div>
+                            <div style="color: green" ng-show="!(RegisterForm.passwordConfirm.$error.match)" ng-if="!(RegisterForm.passwordConfirm.$touched)"
+                                role="alert">Passwords match</div>
 
                             <span style="color: red" ng-show="isPasswordFieldError">
                                 <span ng-show="RegisterForm.password.$error.required">
