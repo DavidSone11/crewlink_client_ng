@@ -12,10 +12,16 @@ angular.module('crewLinkNgApp')
         templateUrl:'ng/directives/header/header-notification/header-notification.tmpl.html',
         restrict: 'E',
 		replace: false,
-		controller:function($scope){
+		controller:function HeaderNotificationController($scope){
 			$scope.colorpallet = "Hiiiii";
 
-			console.log($scope.colorpallet);
+			$scope.$watch('colorpallet', function (newValue, oldValue) {
+				if (newValue != oldValue)
+				$scope.colorpallet = newValue;
+				console.log($scope.colorpallet);
+			}, true);
+
+			
 		}
     	}
 	});

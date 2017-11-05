@@ -123,7 +123,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider','$http
       }
     })
     .state('dashboard.form', {
-      templateUrl: 'ng/directives/form.html',
+      templateUrl: 'ng/directives/form.tmpl.html',
       url: '/form'
     })
     .state('dashboard.blank', {
