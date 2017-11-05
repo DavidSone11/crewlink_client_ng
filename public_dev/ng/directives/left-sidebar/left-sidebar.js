@@ -8,9 +8,9 @@
  */
 
 angular.module('crewLinkNgApp')
-  .directive('sidebar',['$location',function() {
+  .directive('leftSideBar',['$location',function() {
     return {
-      templateUrl:'ng/directives/sidebar/sidebar.tmpl.html',
+      templateUrl:'ng/directives/left-sidebar/left-sidebar.tmpl.html',
       restrict: 'E',
       replace: false,
       scope: {
