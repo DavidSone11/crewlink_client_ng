@@ -1,59 +1,33 @@
-<div>
-    <div class="row">
-        <div class="col-lg-12">
-            <h4 class="page-header">Dashboard</h4>
-        </div>
-        <!-- /.col-lg-12 -->
+<div class="row">
+    <div class="col-lg-12">
+        <h4 class="page-header">Dashboard</h4>
     </div>
-    <!-- /.row -->
-
-    <div class="panel panel-default">
-        <div class="panel-heading">Dashboard</div>
-        <div class="panel-body">
-
-            <div class="row">
-
-                <stats number="6" comments="New comments!" colour="primary" type="comments" goto="dashboard.home"></stats>
-                <stats number="12" comments="New tasks!" colour="green" type="user" goto="dashboard.home"></stats>
-                <stats number="18" comments="New orders!" colour="yellow" type="shopping-cart" goto="dashboard.home"></stats>
-                <stats number="24" comments="Support tickets!" colour="red" type="support" goto="dashboard.home"></stats>
-
-            </div>
-
-        </div>
-    </div>
-
-
-
-    <div class="row">
-        <div class="col-lg-8">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
-                </div>
-
-                <timeline></timeline>
-
-            </div>
-
-        </div>
-
-        <div class="col-lg-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <i class="fa fa-bell fa-fw"></i> Notifications Panel
-                </div>
-
-                <notifications></notifications>
-
-            </div>
-
-
-
-        </div>
-
-    </div>
-
-    <toaster-container toaster-options="{'time-out': 3000, 'position-class': 'toast-bottom-left', 'close-button':true, 'animation-class': 'toast-bottom-left'}"></toaster-container>
-
+    <!-- /.col-lg-12 -->
 </div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Dashboard</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <stats number="6" comments="New comments!" colour="primary" type="comments" goto="dashboard.home"></stats>
+                        <stats number="12" comments="New tasks!" colour="green" type="user" goto="dashboard.home"></stats>
+                        <stats number="18" comments="New orders!" colour="yellow" type="shopping-cart" goto="dashboard.home"></stats>
+                        <stats number="24" comments="Support tickets!" colour="red" type="support" goto="dashboard.home"></stats>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<toaster-container toaster-options="{'time-out': 3000, 'position-class': 'toast-bottom-left', 'close-button':true, 'animation-class': 'toast-bottom-left'}"></toaster-container>

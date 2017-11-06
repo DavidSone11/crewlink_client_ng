@@ -10,9 +10,10 @@
                         <fieldset>
                             <form role="form" name="loginForm" novalidate ng-submit='loginForm.$valid && login()'>
                                 <div class="form-group" ng-class="{'has-error':loginForm.username.$touched || (loginForm.username.$dirty && loginForm.username.$invalid)}">
-
-                                    <input class="form-control" placeholder="username" name="username" type="text" ng-model="userobj.username" ng-required="true">
-
+                                    <div class="input-group">
+                                            <span class="input-group-addon" id="username"><span class="glyphicon glyphicon-user"></span></span>
+                                        <input class="form-control" placeholder="username" name="username" type="text" ng-model="userobj.username" ng-required="true">
+                                    </div>
 
                                     <span style="color: red" ng-show="isUserFieldError">
                                         <span ng-show="loginForm.username.$error.required">
@@ -21,7 +22,12 @@
 
                                 </div>
                                 <div class="form-group" ng-class="{'has-error':loginForm.username.$touched || (loginForm.username.$dirty && loginForm.username.$invalid)}">
-                                    <input class="form-control " placeholder="Password" name="password" type="{{inputType}}" ng-model="userobj.password" ng-required="true">
+                                    <div class="input-group">
+                                        
+                                        <span class="input-group-addon" id="password"><span class="glyphicon glyphicon-lock"></span></span>
+                                        
+                                        <input class="form-control " placeholder="Password" name="password" type="{{inputType}}" ng-model="userobj.password" ng-required="true">
+                                    </div>
 
 
 
@@ -40,7 +46,7 @@
                                     </label>
                                 </div>
 
-                                <button type="submit" class="btn btn-primary btn-sm">SignIn
+                                <button type="submit" class="btn btn-primary btn-sm">Login
                                     <i class="fa fa-sign-in" aria-hidden="true"></i>
 
                                 </button>
@@ -51,10 +57,10 @@
                                 </button>
 
 
-                                <button type="button" class="btn btn-md btn-success ">
+                                <button type="button" class="btn btn-sm btn-success ">
                                     <i class="fa fa-sign-in" aria-hidden="true"></i> ForgetPassword</button>
 
-                                
+
                     </div>
 
                     </form>
