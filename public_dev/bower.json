@@ -44,6 +44,7 @@
     "angular-datatables": "^4.4.1",
     "angular-socket-io": "^0.7.0",
     "lodash": "^4.17.4",
-    "angular-translate": "^2.16.0"
+    "angular-translate": "^2.16.0",
+    "bootstrap-social": "^5.1.1"
   }
 }
