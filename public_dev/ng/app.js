@@ -202,6 +202,7 @@
       }).state('dashboard.userChat', {
         templateUrl: 'ng/directives/chat/chat.directive.html',
         url: '/chat',
+        controller:'UserChatController',
         data: {
           pageTitle: 'Chat'
         },
@@ -211,6 +212,7 @@
               name: 'crewLinkNgApp',
               files: [
                 'ng/directives/chat/chat.directive.js',
+                'ng/controllers/userchat.controller.js',
 
               ]
             });
@@ -272,6 +274,26 @@
               files: [
                 'ng/directives/UserPlan/userPlan.directive.js',
                 'ng/controllers/userPlan.controller.js',
+
+              ]
+            });
+
+          }
+        }
+      }).state('dashboard.usersettings', {
+        templateUrl: 'ng/directives/usersettings/usersettings.directive.html',
+        url: '/settings',
+        controller:'UserSettingsController',
+        data: {
+          pageTitle: 'UserSetting'
+      },
+        resolve: {
+          loadMyFile: function ($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name: 'crewLinkNgApp',
+              files: [
+                'ng/directives/usersettings/usersettings.directive.js',
+                'ng/controllers/usersettings.controller.js',
 
               ]
             });

@@ -5,7 +5,7 @@ var app = angular.module('crewLinkNgApp')
         return {
             templateUrl: 'ng/directives/chat/chat.tmpl.html',
             restrict: 'E',
-            replace: true,
+            replace: false,
             controller: function ($scope) {
 
                 console.log("at chart directive");
