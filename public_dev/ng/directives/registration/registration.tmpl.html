@@ -18,11 +18,7 @@
                 text-indent: 20px;
             }
 
-            .select {
-                overflow: hidden;
-                position: relative;
-                display: block;
-            }
+          
         </style>
     </div>
 </div>
@@ -33,7 +29,7 @@
             <div class="panel-heading">User Registeration</div>
             <div class="panel-body">
                 <form name="RegisterForm" novalidate="novalidate" ng-submit='RegisterForm.$valid && register()'>
-                    <div class="col-lg-6">
+                    <div class="col-md-6">
 
                         <div class="form-group">
 
@@ -108,7 +104,7 @@
 
 
 
-                    <div class="col-lg-6">
+                    <div class="col-md-6">
 
                         <div class="form-group">
                             <i class="fa fa-envelope-o inside"></i>
@@ -134,15 +130,16 @@
 
 
                         <div class="form-group">
+                            
+                                <select class="form-control" ng-model="userRegisteration.selectedRole" ng-required="true" name="role" ng-options="role.name for role in roles">
+                                    <option value="" disabled selected>---Select Role---</option>
 
-                            <select class="form-control" ng-model="userRegisteration.selectedRole" ng-required="true" name="role" ng-options="role.name for role in roles">
-                                <option value="" disabled>Please Select Role</option>
-
-                            </select>
+                                </select>
+                            
 
                             <span style="color: red" ng-show="RegisterForm.role.$dirty">
                                 <span ng-show="RegisterForm.role.$error.required">
-                                    <i class="fa fa-asterisk" aria-hidden="true"></i> Password is required.</span>
+                                    <i class="fa fa-asterisk" aria-hidden="true"></i> Role is required.</span>
                             </span>
                         </div>
 

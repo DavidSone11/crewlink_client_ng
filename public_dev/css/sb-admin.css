@@ -1,4 +1,10 @@
 
+ 
+ * {
+    font-size: 12px;
+    line-height: 1.428;
+ }
+ 
  body {
     font-family: 'Roboto',sans-serif;
     position: static!important;
@@ -45,16 +51,16 @@
 
 #wrapper {
     width: 100%;
-    font-family: 'Roboto',sans-serif;
-    font-size: 12px;
+    
+    
 }
 
 #page-wrapper {
     padding: 0 15px;
     min-height: 568px;
     background-color: #fff;
-    font-family: 'Roboto',sans-serif;
-    font-size: 12px;
+    
+    
 }
 
 @media(min-width:768px) {
@@ -96,7 +102,7 @@
 .navbar-top-links .dropdown-menu li a {
     padding: 3px 20px;
     min-height: 0;
-    font-size: 12px;
+    
 }
 
 .navbar-top-links .dropdown-menu li a div {
@@ -186,6 +192,11 @@
 }
 input,
 input::-webkit-input-placeholder {
+    font-size: 12px;
+    line-height: 3;
+}
+select,
+select::-webkit-select-placeholder {
     font-size: 12px;
     line-height: 3;
 }
