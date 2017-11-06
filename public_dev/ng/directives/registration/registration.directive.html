@@ -41,8 +41,11 @@
                                 <td>{{user.email}}</td>
                                 <td>{{user.roleCode}}</td>
                                 <td>
-                                    <button class="btn btn-xs btn-warning glyphicon glyphicon-edit" ng-click="selectUser(user)" title="Edit"> </button>
-                                    <button class="btn btn-xs btn-danger glyphicon glyphicon-trash" ng-click="removeUser(user)"> </button>
+                                    <button class="btn btn-xs btn-warning" ng-click="selectUser(user)">
+                                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button>
+                                    <button class="btn btn-xs btn-danger" ng-click="removeUser(user)"> 
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </button>
                                 </td>
                             </tr>
 
