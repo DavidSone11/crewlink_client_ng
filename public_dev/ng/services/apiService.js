@@ -9,10 +9,10 @@ app.service('apiService', ['$http', '$q', function ($http, $q) {
         fetch: function (apiUrl, options) {
             var deferred = $q.defer();
             apiUrl = angular.isDefined(apiUrl) ? apiUrl : '';
-            $http.get(apiUrl, { params: options }, { headers: { 'Content-Type': 'application/json' } }).success(function successCallback(response) {
+            $http.get(apiUrl, { params: options }, { headers: { 'Content-Type': 'application/json' } }).then(function successCallback(response) {
                 deferred.resolve(response);
-            }, function errorCallback(response, status, headers, config) {
-                deferred.reject(response.data.statusText);
+            }).catch(function (data, status, headers, config) {
+                deferred.reject(data.statusText);
             });
             return deferred.promise;
         },

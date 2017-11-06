@@ -9,6 +9,6 @@
 angular.module('crewLinkNgApp')
   .controller('FormCtrl', function($scope,apiService) {
 
-    apiService.fetch();
+    
     
 });
