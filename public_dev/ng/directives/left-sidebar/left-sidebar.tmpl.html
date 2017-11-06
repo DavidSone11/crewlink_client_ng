@@ -1,23 +1,22 @@
 <div class="navbar-default sidebar" role="navigation">
+    
     <div class="sidebar-nav navbar-collapse">
-        <ul class="nav in" id="side-menu">
+            <sidebar-search></sidebar-search>
+        <ul class="nav in" id="side-menu" ng-repeat="s in sidebarslist">
 
-            <li class="sidebar-search">
-                <sidebar-search></sidebar-search>
-            </li>
 
             <li ui-sref-active="active">
                 <a ui-sref="dashboard.home">
-                    <i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <i class="fa fa-dashboard fa-fw"></i>{{s.Dashboard}}</a>
             </li>
 
             <li ui-sref-active="active">
                 <a ui-sref="dashboard.registration">
-                    <i class="fa fa-user fa-fw"></i>Register</a>
+                    <i class="fa fa-user fa-fw"></i>{{s.Register}}</a>
             </li>
             <li ui-sref-active="active">
                 <a ui-sref="dashboard.userplan">
-                    <i class="fa fa-paper-plane-o" aria-hidden="true"></i> UserPlan</a>
+                    <i class="fa fa-paper-plane-o" aria-hidden="true"></i> {{s.UserPlan}}</a>
             </li>
 
 
@@ -26,7 +25,7 @@
 
             <li ui-sref-active="active">
                 <a ui-sref="dashboard.form">
-                    <i class="fa fa-edit fa-fw"></i> Forms</a>
+                    <i class="fa fa-edit fa-fw"></i> {{s.Forms}}</a>
             </li>
             <li ng-class="{active: collapseVar==1}">{{dropDown}}
                 <a href="" ng-click="check(1)">
@@ -86,10 +85,8 @@
                             </li>
 
                         </ul>
-                        <!-- /.nav-third-level -->
                     </li>
                 </ul>
-                <!-- /.nav-second-level -->
             </li>
             <li ng-class="{active:collapseVar==4}">
                 <a href="" ng-click="check(4)">
@@ -102,10 +99,8 @@
                     </li>
 
                 </ul>
-                <!-- /.nav-second-level -->
             </li>
 
         </ul>
     </div>
-    <!-- /.sidebar-collapse -->
 </div>
