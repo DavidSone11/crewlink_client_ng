@@ -386,7 +386,7 @@
     border-radius: 2px;
   }
   .content-header > .breadcrumb > li > a {
-    color: #444;
+    color: rgb(7, 7, 7);
     text-decoration: none;
     display: inline-block;
   }
