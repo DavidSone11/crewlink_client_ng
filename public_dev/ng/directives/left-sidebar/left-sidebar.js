@@ -13,17 +13,15 @@ angular.module('crewLinkNgApp')
       templateUrl: 'ng/directives/left-sidebar/left-sidebar.tmpl.html',
       restrict: 'E',
       replace: false,
-  
+
       controller: function ($scope) {
 
 
         $scope.sidebarslist = [
-          { 'Dashboard': 'Dashboard' },
-          { 'Register': 'Register' },
-          { 'UserPlan': 'UserPlan' },
-          { 'Forms': 'Forms' },
-          { 'Forms': 'Forms' },
-          { 'Forms': 'Forms' }
+          { Dashboard: 'Dashboard', dashboardClass: 'fa fa-dashboard fa-fw' },
+          { Register: 'Register', registerClass: 'fa fa-user fa-fw' },
+          { UserPlan: 'UserPlan' ,userPlanClass: 'fa fa-paper-plane-o fa-fw' },
+          { Forms: 'Forms',formClass: 'fa fa-edit fa-fw' }
         ];
 
         $scope.selectedMenu = 'dashboard';

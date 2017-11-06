@@ -1,31 +1,36 @@
 <div class="navbar-default sidebar" role="navigation">
-    
-    <div class="sidebar-nav navbar-collapse">
-            <sidebar-search></sidebar-search>
-        <ul class="nav in" id="side-menu" ng-repeat="s in sidebarslist">
 
+    <div class="sidebar-nav navbar-collapse">
+        <sidebar-search></sidebar-search>
+        <ul class="nav in" id="side-menu">
 
             <li ui-sref-active="active">
                 <a ui-sref="dashboard.home">
-                    <i class="fa fa-dashboard fa-fw"></i>{{s.Dashboard}}</a>
+                    <i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li>
-
             <li ui-sref-active="active">
+
                 <a ui-sref="dashboard.registration">
-                    <i class="fa fa-user fa-fw"></i>{{s.Register}}</a>
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Registeration
+                    <span></span>
+                </a>
+
             </li>
             <li ui-sref-active="active">
-                <a ui-sref="dashboard.userplan">
-                    <i class="fa fa-paper-plane-o" aria-hidden="true"></i> {{s.UserPlan}}</a>
+
+                <a ui-sref="dashboard.userChart">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Charts
+                    <span></span>
+                </a>
+
             </li>
-
-
-
-
-
+            <li ui-sref-active="active">
+                <a ui-sref="dashboard.table">
+                    <i class="fa fa-table fa-fw"></i> Tables</a>
+            </li>
             <li ui-sref-active="active">
                 <a ui-sref="dashboard.form">
-                    <i class="fa fa-edit fa-fw"></i> {{s.Forms}}</a>
+                    <i class="fa fa-edit fa-fw"></i> Forms</a>
             </li>
             <li ng-class="{active: collapseVar==1}">{{dropDown}}
                 <a href="" ng-click="check(1)">
@@ -85,8 +90,10 @@
                             </li>
 
                         </ul>
+                        <!-- /.nav-third-level -->
                     </li>
                 </ul>
+                <!-- /.nav-second-level -->
             </li>
             <li ng-class="{active:collapseVar==4}">
                 <a href="" ng-click="check(4)">
@@ -97,9 +104,18 @@
                     <li ng-class="{active: selectedMenu=='blank'}">
                         <a ui-sref="dashboard.blank" ng-click="selectedMenu='blank'">Blank Page</a>
                     </li>
+                    <li>
 
+                    </li>
                 </ul>
+                <!-- /.nav-second-level -->
             </li>
+
+        </ul>
+
+
+
+
 
         </ul>
     </div>
