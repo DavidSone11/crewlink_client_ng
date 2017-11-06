@@ -20,7 +20,7 @@
       'chart.js'
 
     ]);
-  app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$httpProvider', '$locationProvider', 'ChartJsProvider','cfpLoadingBarProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $httpProvider, $locationProvider, ChartJsProvider,cfpLoadingBarProvider) {
+  app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$httpProvider', '$locationProvider', 'ChartJsProvider', 'cfpLoadingBarProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $httpProvider, $locationProvider, ChartJsProvider, cfpLoadingBarProvider) {
 
     $ocLazyLoadProvider.config({
       debug: false,
@@ -161,6 +161,9 @@
         templateUrl: 'ng/directives/login/login.directive.html',
         url: '/login',
         controller: 'LoginController',
+        data: {
+          pageTitle: 'Login'
+        },
         resolve: {
           loadMyFiles: function ($ocLazyLoad) {
             return $ocLazyLoad.load({
@@ -178,6 +181,9 @@
         templateUrl: 'ng/directives/registration/registration.directive.html',
         url: '/registration',
         controller: 'RegistrationController',
+        data: {
+          pageTitle: 'Registration'
+        },
         resolve: {
           loadMyFile: function ($ocLazyLoad) {
             return $ocLazyLoad.load({
@@ -196,6 +202,9 @@
       }).state('dashboard.userChat', {
         templateUrl: 'ng/directives/chat/chat.directive.html',
         url: '/chat',
+        data: {
+          pageTitle: 'Chat'
+        },
         resolve: {
           loadMyFile: function ($ocLazyLoad) {
             return $ocLazyLoad.load({
@@ -212,6 +221,9 @@
         templateUrl: 'ng/directives/userchart/userchart.directive.html',
         url: '/chart',
         controller: 'UserChartController',
+        data: {
+          pageTitle: 'Chart'
+        },
         resolve: {
           loadMyFile: function ($ocLazyLoad) {
             return $ocLazyLoad.load({
@@ -228,12 +240,17 @@
       }).state('dashboard.userUpload', {
         templateUrl: 'ng/directives/Upload/upload.directive.html',
         url: '/upload',
+        controller:'UploadController',
+        data: {
+          pageTitle: 'Upload'
+      },
         resolve: {
           loadMyFile: function ($ocLazyLoad) {
             return $ocLazyLoad.load({
               name: 'crewLinkNgApp',
               files: [
                 'ng/directives/Upload/upload.directive.js',
+                'ng/controllers/upload.controller.js',
 
               ]
             });
