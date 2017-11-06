@@ -77,8 +77,9 @@
                   'ng/directives/left-sidebar/left-sidebar.js',
                   'ng/directives/left-sidebar/left-sidebar-search/left-sidebar-search.js',
                   'ng/directives/right-sidebar/right-sidebar.js',
-                  'ng/utility/currentstate.prototype.js'
-
+                  'ng/utility/currentstate.prototype.js',
+                  'ng/services/apiService.js',
+                  'ng/factory/authFactory.js'
                 ]
               }),
               $ocLazyLoad.load(

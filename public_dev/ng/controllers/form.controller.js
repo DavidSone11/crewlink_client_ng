@@ -7,6 +7,8 @@
  * Controller of the sbAdminApp
  */
 angular.module('crewLinkNgApp')
-  .controller('FormCtrl', function($scope) {
+  .controller('FormCtrl', function($scope,apiService) {
+
+    apiService.fetch();
     
 });
