@@ -18,9 +18,10 @@ app.service('apiService', ['$http', '$q', function ($http, $q) {
         },
 
         //CREATE NEW RESOURCE
-        create: function (apiUrl, options) {
+        create: function (apiUrl, parameterobject) {
             var deferred = $q.defer();
-            $http.post(apiUrl, parameter, { headers: { 'Content-Type': 'application/json' } }).success(function successCallback(response) {
+            apiUrl = angular.isDefined(apiUrl) ? apiUrl : '';
+            $http.post(apiUrl, parameterobject, { headers: "application/json; charset=utf-8" }).then(function successCallback(response) {
                 deferred.resolve(response);
             }, function errorCallback(response, status, headers, config) {
                 deferred.reject(response.data.statusText);
@@ -29,19 +30,15 @@ app.service('apiService', ['$http', '$q', function ($http, $q) {
         },
 
         //UPDATE EXISTING RESOURCE
-        update: function (apiUrl, parameter, options) {
+        update: function (apiUrl, parameter, parameterObject) {
             var deferred = $q.defer();
             apiUrl = angular.isDefined(apiUrl) ? apiUrl : '';
-            $http.put(apiUrl + '/' + parameter.id, parameter, { headers: { 'Content-Type': 'application/json' } }).success(function successCallback(response) {
-
+            $http.put(apiUrl + '/' + parameter.id, parameterObject, { headers: { 'Content-Type': 'application/json' } }).then(function successCallback(response) {
                 deferred.resolve(response);
-
             }).catch(function (data, status, headers, config) {
                 deferred.reject(data.statusText);
             });
-
             return deferred.promise;
-
         },
 
         remove: function (apiUrl, parameter) {
