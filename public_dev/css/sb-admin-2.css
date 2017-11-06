@@ -149,30 +149,32 @@
 }
 
 .sidebar .sidebar-search {
-    padding: 10px 4px 1px 3px;
+    padding: 7px 0px 4px 14px;
 }
 
 .sidebar .sidebar-search .search-txt{
-    -webkit-transition: all .35s,border-radius 0s; 
-    transition: all 0.35s, border-radius 0s;
     width: 32px;
     height: 33px;
-    
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     border-radius: 25px;
     border: 1px solid #ccc;
+    opacity:0.8;
 }
+
+.sidebar .sidebar-search .search-txt:hover,
 .sidebar .sidebar-search .search-txt:focus{
-    -webkit-transition: all .35s,border-radius 0s; 
-    transition: all 0.35s, border-radius 0s;
-    width: 100%;
-    border-radius: 4px 25px 25px 4px;
     
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: width 10s; 
+    transition: width 10s;
+    -webkit-transition-duration: 2s; 
+    transition-duration: 2s;
     border-radius: 25px;
+    width: 120%;
+    opacity: 1;
     border: 1px solid #ccc;
+    font-family:"Lucida Grande", Arial, sans-serif;
+    font-size:13px;
+    font-weight:normal;
+    font-style:normal;
 }
 .sidebar ul li {
     border-bottom: 1px solid #e7e7e7;
