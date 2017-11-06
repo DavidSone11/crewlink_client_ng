@@ -261,12 +261,17 @@
       .state('dashboard.userplan', {
         template: '<user-plan></user-plan>',
         url: '/plan',
+        controller:'UserPlanController',
+        data: {
+          pageTitle: 'UserPlan'
+      },
         resolve: {
           loadMyFile: function ($ocLazyLoad) {
             return $ocLazyLoad.load({
               name: 'crewLinkNgApp',
               files: [
                 'ng/directives/UserPlan/userPlan.directive.js',
+                'ng/controllers/userPlan.controller.js',
 
               ]
             });
