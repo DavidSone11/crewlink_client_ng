@@ -1,27 +1,35 @@
 <div class="row">
     <div class="col-lg-12">
-
-        <div class="page-header">
-            <h4>{{title}}</h4>
-        </div>
-
-        <style>
-            .inside {
-                position: absolute;
-                text-indent:15px;
-                margin-top: 9px;
-                
-                
-            }
-
-            .inp {
-                text-indent: 20px;
-            }
-
-          
-        </style>
+        <section class="content-header">
+            <div class="page-header">
+                <h3>Registration</h3>
+            </div>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> Dashboard</a>
+                </li>
+                <li class="active">{{title}}</li>
+            </ol>
+        </section>
     </div>
+    <!-- /.col-lg-12 -->
 </div>
+
+
+<style>
+    .inside {
+        position: absolute;
+        text-indent: 15px;
+        margin-top: 9px;
+
+
+    }
+
+    .inp {
+        text-indent: 20px;
+    }
+</style>
 
 <div class="row">
     <div class="col-lg-12">
@@ -130,12 +138,12 @@
 
 
                         <div class="form-group">
-                            
-                                <select class="form-control" ng-model="userRegisteration.selectedRole" ng-required="true" name="role" ng-options="role.name for role in roles">
-                                    <option value="" disabled selected>---Select Role---</option>
 
-                                </select>
-                            
+                            <select class="form-control" ng-model="userRegisteration.selectedRole" ng-required="true" name="role" ng-options="role.name for role in roles">
+                                <option value="" disabled selected>---Select Role---</option>
+
+                            </select>
+
 
                             <span style="color: red" ng-show="RegisterForm.role.$dirty">
                                 <span ng-show="RegisterForm.role.$error.required">
@@ -166,7 +174,8 @@
                         <switch></switch>
                         <!-- <button type="button" class="btn-circle-off" id="togglebtnId"  onclick="toggleState(this)">OFF</button> !-->
                         <custom-switch status="{{checkstatus}}"></custom-switch>
-                        <button type="submit" ng-disabled="RegisterForm.$invalid" class="btn btn-primary btn-md"> <i class="fa fa-floppy-o fa-fx" aria-hidden="true"></i>Save</button>
+                        <button type="submit" ng-disabled="RegisterForm.$invalid" class="btn btn-primary btn-md">
+                            <i class="fa fa-floppy-o fa-fx" aria-hidden="true"></i>Save</button>
                         <button type="reset" class="btn btn-danger btn-md" ng-click="reset();">
                             <i class="fa fa-refresh" aria-hidden="true"></i> Reset</button>
 
