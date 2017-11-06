@@ -8,10 +8,10 @@
         <style>
             .inside {
                 position: absolute;
-                text-indent: 5px;
+                text-indent:15px;
                 margin-top: 9px;
-                color: #000000;
-                font-weight: bold;
+                
+                
             }
 
             .inp {
@@ -166,7 +166,7 @@
                         <switch></switch>
                         <!-- <button type="button" class="btn-circle-off" id="togglebtnId"  onclick="toggleState(this)">OFF</button> !-->
                         <custom-switch status="{{checkstatus}}"></custom-switch>
-                        <button type="submit" ng-disabled="RegisterForm.$invalid" class="btn btn-primary btn-md glyphicon glyphicon-saved">Save</button>
+                        <button type="submit" ng-disabled="RegisterForm.$invalid" class="btn btn-primary btn-md"> <i class="fa fa-floppy-o fa-fx" aria-hidden="true"></i>Save</button>
                         <button type="reset" class="btn btn-danger btn-md" ng-click="reset();">
                             <i class="fa fa-refresh" aria-hidden="true"></i> Reset</button>
 

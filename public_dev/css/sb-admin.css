@@ -2,7 +2,7 @@
  
  * {
     font-size: 12px;
-    line-height: 1.428;
+    
  }
  
  body {
@@ -13,6 +13,11 @@
     
 }
 
+
+.btn-danger, .btn-danger:hover, .btn-danger:active, .btn-danger:visited,   
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+   font-size:12px; 
+}
 
 .header {
     padding-left: 0px;
