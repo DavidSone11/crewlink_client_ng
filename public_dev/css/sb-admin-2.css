@@ -153,11 +153,13 @@
 }
 
 .sidebar .sidebar-search .search-txt{
-    width: 32px;
+    width: 40px;
     height: 33px;
     border-radius: 25px;
     border: 1px solid #ccc;
     opacity:0.8;
+    font-family: 'FontAwesome';
+    color:black;
 }
 
 .sidebar .sidebar-search .search-txt:hover,
@@ -171,7 +173,7 @@
     width: 120%;
     opacity: 1;
     border: 1px solid #ccc;
-    font-family:"Lucida Grande", Arial, sans-serif;
+    font-family:"Lucida Grande", Arial, sans-serif FontAwesome;
     font-size:13px;
     font-weight:normal;
     font-style:normal;

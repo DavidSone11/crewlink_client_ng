@@ -21,6 +21,8 @@ angular.module('crewLinkNgApp')
 				console.log($scope.colorpallet);
 			}, true);
 
+			$scope.currentLogedIn = "welcome : santosh"
+
 			
 		}
     	}

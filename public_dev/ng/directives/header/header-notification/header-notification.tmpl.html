@@ -7,6 +7,7 @@
             color: rgb(24, 4, 4);
             padding: 28px 7px 3px 49px;
             border: 1px solid grey;
+            box-shadow: inset 0 0 5px 2px #282a2d;
         }
     </style>
 
@@ -50,11 +51,13 @@
             -moz-transform: scale(1);
             transition: all 200ms ease-in;
             transform: scale(1);
+            background: transparent;
+            box-shadow: 10px 10px 5px #888888;
         }
 
 
 
-        .stretch:hover {
+        .img-circle:hover {
             z-index: 2;
             -webkit-transition: all 200ms ease-in;
             -webkit-transform: scale(1.5);
@@ -67,14 +70,12 @@
         }
     </style>
 
-
     <li>
-
-        <img class="img-circle stretch" src="images/bhagwan-god-lord-ganesha-image-pictures.jpg">
-
+        <strong><h5>{{currentLogedIn | uppercase}}</h5> </strong>
     </li>
-
-
+    <li>
+        <img class="img-circle" src="images/bhagwan-god-lord-ganesha-image-pictures.jpg">
+    </li>
     <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-envelope fa-fw"></i>
