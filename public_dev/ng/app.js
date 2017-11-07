@@ -19,6 +19,7 @@
       'toaster',
       'base64',
       'flash',
+      'login',
     ]);
   app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$httpProvider', '$locationProvider', 'ChartJsProvider', 'cfpLoadingBarProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $httpProvider, $locationProvider, ChartJsProvider, cfpLoadingBarProvider) {
 
@@ -59,7 +60,7 @@
     });
 
 
-    ///$urlRouterProvider.otherwise('/dashboard/home');
+   // $urlRouterProvider.otherwise('/dashboard/home');
     $urlRouterProvider.otherwise('/login');
 
     $stateProvider
@@ -115,6 +116,7 @@
                   'ng/services/apiService.js',
                   'ng/factory/authFactory.js',
                   'ng/services/apiResourceService.js'
+                  
                 ]
               });
 
@@ -180,27 +182,6 @@
                 'ng/directives/registration/registration.directive.js',
                 'ng/customdirective/switch.js',
                 'ng/customdirective/custom_switch.js'
-              ]
-            });
-
-          }
-        }
-      }).state('login', {
-        templateUrl: 'ng/directives/login/login.directive.html',
-        url: '/login',
-        controller:'LoginController',
-        data: {
-          pageTitle: 'Login'
-        },
-        resolve: {
-          loadMyFile: function ($ocLazyLoad) {
-            return $ocLazyLoad.load({
-
-              name: 'crewLinkNgApp',
-              files: [
-                'ng/directives/login/login.directive.js',
-                'ng/controllers/login.controller.js'
-                
               ]
             });
 
@@ -334,6 +315,8 @@
         url: '/grid'
       })
   }]);
+
+  app.constant('appSettings', appConfiguration);
 
   app.run(['$rootScope', '$location', function AppRun($rootScope, $location) {
     $rootScope.$on('$routeChangeStart', function (event) {
