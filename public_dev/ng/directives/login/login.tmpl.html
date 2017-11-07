@@ -21,11 +21,9 @@
 
                                 </div>
                                 <div class="form-group" ng-class="{'has-error':loginForm.username.$touched || (loginForm.username.$dirty && loginForm.username.$invalid)}">
-                                    <div class="input-group">
-                                        
-                                        <span class="input-group-addon" id="password"><span class="glyphicon glyphicon-lock"></span></span>
-                                        
-                                        <input class="form-control " placeholder="Password" name="password" type="{{inputType}}" ng-model="userobj.password" ng-required="true">
+                                    <div class="input-group">                                        
+                                        <span class="input-group-addon" id="password"><span class="glyphicon glyphicon-lock"></span></span>                                        
+                                        <input class="form-control " placeholder="Password" name="password" type="{{type}}" ng-model="userobj.password" ng-required="true">
                                     </div>
 
 
@@ -34,9 +32,9 @@
                                         <span ng-show="loginForm.password.$error.required">
                                             <i class="fa fa-asterisk" aria-hidden="true"></i> Password is required.</span>
                                     </span>
-                                    <span ng-click="hideShowPassword()" class="col-sm-offset-10 col-sm-2" style="cursor: pointer;">
+                                    <button type="button" class="btn btn-bitbucket btn-sm" data-ng-disabled="isChange" ng-click="changePasswordType()" style="cursor: pointer;margin-top:2px">
                                         <i class="fa fa-eye" aria-hidden="true"></i>
-                                    </span>
+                                    </button>
                                 </div>
 
                                 <div class="checkbox">

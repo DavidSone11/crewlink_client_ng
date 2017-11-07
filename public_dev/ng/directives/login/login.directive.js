@@ -5,6 +5,7 @@ angular.module('crewLinkNgApp')
         return {
             templateUrl: 'ng/directives/login/login.tmpl.html',
             restrict: 'E',
+            replace:false,
             controller: function ($scope) {
 
                 console.log("at login directive");

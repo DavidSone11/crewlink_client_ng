@@ -30,10 +30,10 @@ app.service('apiService', ['$http', '$q', function ($http, $q) {
         },
 
         //UPDATE EXISTING RESOURCE
-        update: function (apiUrl, parameter, parameterObject) {
+        update: function (apiUrl,param, parameterObject) {
             var deferred = $q.defer();
             apiUrl = angular.isDefined(apiUrl) ? apiUrl : '';
-            $http.put(apiUrl + '/' + parameter.id, parameterObject, { headers: { 'Content-Type': 'application/json' } }).then(function successCallback(response) {
+            $http.put(apiUrl + '/' +param._id, parameterObject, { headers: { 'Content-Type': 'application/json' } }).then(function successCallback(response) {
                 deferred.resolve(response);
             }).catch(function (data, status, headers, config) {
                 deferred.reject(data.statusText);

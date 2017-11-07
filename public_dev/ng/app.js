@@ -14,10 +14,11 @@
       'ui.router',
       'ui.bootstrap',
       'angular-loading-bar',
+      'validation.match',
+      'chart.js',
       'toaster',
       'base64',
-      'validation.match',
-      'chart.js'
+
 
     ]);
   app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$httpProvider', '$locationProvider', 'ChartJsProvider', 'cfpLoadingBarProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $httpProvider, $locationProvider, ChartJsProvider, cfpLoadingBarProvider) {
@@ -68,42 +69,29 @@
         templateUrl: 'ng/directives/dashboard/dashboard.tmpl.html',
         resolve: {
           loadMyDirectives: function ($ocLazyLoad) {
-            return $ocLazyLoad.load(
+
+            $ocLazyLoad.load(
               {
-                name: 'crewLinkNgApp',
-                files: [
-                  'ng/directives/header/header.js',
-                  'ng/directives/header/header-notification/header-notification.js',
-                  'ng/directives/left-sidebar/left-sidebar.js',
-                  'ng/directives/left-sidebar/left-sidebar-search/left-sidebar-search.js',
-                  'ng/directives/right-sidebar/right-sidebar.js',
-                  'ng/utility/currentstate.prototype.js',
-                  'ng/services/apiService.js',
-                  'ng/factory/authFactory.js'
+                name: 'toggle-switch',
+                files: ["bower_components/angular-toggle-switch/angular-toggle-switch.min.js",
+                  "bower_components/angular-toggle-switch/angular-toggle-switch.css"
                 ]
               }),
               $ocLazyLoad.load(
                 {
-                  name: 'toggle-switch',
-                  files: ["bower_components/angular-toggle-switch/angular-toggle-switch.min.js",
-                    "bower_components/angular-toggle-switch/angular-toggle-switch.css"
-                  ]
-                }),
-              $ocLazyLoad.load(
-                {
-                  name: 'ngAnimate',
-                  files: ['bower_components/angular-animate/angular-animate.js']
-                })
+                  name: 'ngResource',
+                  files: ['bower_components/angular-resource/angular-resource.js']
+                });
+            $ocLazyLoad.load(
+              {
+                name: 'ngAnimate',
+                files: ['bower_components/angular-animate/angular-animate.js']
+              });
             $ocLazyLoad.load(
               {
                 name: 'ngCookies',
                 files: ['bower_components/angular-cookies/angular-cookies.js']
               });
-            $ocLazyLoad.load(
-              {
-                name: 'ngResource',
-                files: ['bower_components/angular-resource/angular-resource.js']
-              })
             $ocLazyLoad.load(
               {
                 name: 'ngSanitize',
@@ -114,6 +102,23 @@
                 name: 'ngTouch',
                 files: ['bower_components/angular-touch/angular-touch.js']
               });
+            $ocLazyLoad.load(
+              {
+
+                name: 'crewLinkNgApp',
+                files: [
+                  'ng/directives/header/header.js',
+                  'ng/directives/header/header-notification/header-notification.js',
+                  'ng/directives/left-sidebar/left-sidebar.js',
+                  'ng/directives/left-sidebar/left-sidebar-search/left-sidebar-search.js',
+                  'ng/directives/right-sidebar/right-sidebar.js',
+                  'ng/utility/currentstate.prototype.js',
+                  'ng/services/apiService.js',
+                  'ng/factory/authFactory.js',
+                  'ng/services/apiResourceService.js'
+                ]
+              });
+
 
 
           }
@@ -132,7 +137,8 @@
                 'ng/controllers/home.controller.js',
                 'ng/directives/timeline/timeline.js',
                 'ng/directives/notifications/notifications.js',
-                'ng/directives/dashboard/stats/stats.js',
+                'ng/directives/dashboard/stats/stats.js'
+
 
               ]
             });
@@ -158,26 +164,6 @@
           }
         }
       })
-      .state('login', {
-        templateUrl: 'ng/directives/login/login.directive.html',
-        url: '/login',
-        controller: 'LoginController',
-        data: {
-          pageTitle: 'Login'
-        },
-        resolve: {
-          loadMyFiles: function ($ocLazyLoad) {
-            return $ocLazyLoad.load({
-              name: 'crewLinkNgApp',
-              files: [
-                'ng/controllers/login.controller.js',
-                'ng/directives/login/login.directive.js',
-              ]
-            });
-          }
-        }
-      })
-
       .state('dashboard.registration', {
         templateUrl: 'ng/directives/registration/registration.directive.html',
         url: '/registration',
@@ -200,10 +186,31 @@
 
           }
         }
+      }).state('login', {
+        templateUrl: 'ng/directives/login/login.directive.html',
+        url: '/login',
+        controller:'LoginController',
+        data: {
+          pageTitle: 'Login'
+        },
+        resolve: {
+          loadMyFile: function ($ocLazyLoad) {
+            return $ocLazyLoad.load({
+
+              name: 'crewLinkNgApp',
+              files: [
+                'ng/directives/login/login.directive.js',
+                'ng/controllers/login.controller.js'
+                
+              ]
+            });
+
+          }
+        }
       }).state('dashboard.userChat', {
         templateUrl: 'ng/directives/chat/chat.directive.html',
         url: '/chat',
-        controller:'UserChatController',
+        controller: 'UserChatController',
         data: {
           pageTitle: 'Chat'
         },
@@ -243,10 +250,10 @@
       }).state('dashboard.userUpload', {
         templateUrl: 'ng/directives/Upload/upload.directive.html',
         url: '/upload',
-        controller:'UploadController',
+        controller: 'UploadController',
         data: {
           pageTitle: 'Upload'
-      },
+        },
         resolve: {
           loadMyFile: function ($ocLazyLoad) {
             return $ocLazyLoad.load({
@@ -264,10 +271,10 @@
       .state('dashboard.userplan', {
         template: '<user-plan></user-plan>',
         url: '/plan',
-        controller:'UserPlanController',
+        controller: 'UserPlanController',
         data: {
           pageTitle: 'UserPlan'
-      },
+        },
         resolve: {
           loadMyFile: function ($ocLazyLoad) {
             return $ocLazyLoad.load({
@@ -284,10 +291,10 @@
       }).state('dashboard.usersettings', {
         templateUrl: 'ng/directives/usersettings/usersettings.directive.html',
         url: '/settings',
-        controller:'UserSettingsController',
+        controller: 'UserSettingsController',
         data: {
           pageTitle: 'UserSetting'
-      },
+        },
         resolve: {
           loadMyFile: function ($ocLazyLoad) {
             return $ocLazyLoad.load({
