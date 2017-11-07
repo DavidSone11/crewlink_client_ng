@@ -18,8 +18,7 @@
       'chart.js',
       'toaster',
       'base64',
-
-
+      'flash',
     ]);
   app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$httpProvider', '$locationProvider', 'ChartJsProvider', 'cfpLoadingBarProvider', function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $httpProvider, $locationProvider, ChartJsProvider, cfpLoadingBarProvider) {
 
