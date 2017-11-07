@@ -11,14 +11,18 @@ app.controller("LoginController", ['$scope', '$state', 'toaster', '$location', '
 
 
 
-    $scope.userobj = {};
+    $scope.userobj = {
+        'username':'',
+        'password':''        
+    };
     $scope.type = 'password';
     var choices = { 'password': 'password', 'text': 'text' };
     $scope.isChange = false;
-    if (angular.isDefined($scope.userobj.password)) {
-        $scope.isChange = false;
-    }
+
     $scope.changePasswordType = function () {
+        if (angular.isDefined($scope.userobj.password)) {
+            return '';
+        }
         if (!angular.isObject($scope.type)) {
 
             /// logic :1 
