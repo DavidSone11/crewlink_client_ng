@@ -12,3 +12,23 @@
     theme: 'skin-purple',
     layout:""
 };
+
+var api = {
+    protocol: 'http',
+    server: 'localhost',
+    port: 8888,
+    baseUrl: '/api/v1',
+    loginUrl: '/login',
+    registerUrl: '/register',
+    userPlan: "/userPlan",
+    getGlobalSections: "/globalSections",
+    getPlanSections: "/userPlanSectionsList"
+};
+
+
+var apiUrl = api.protocol + '://' + api.server + ':' + api.port + api.baseUrl;
+var apiLoginUrl = api.protocol + '://' + api.server + ':' + api.port + api.loginUrl;
+var apiRegisterUrl = api.protocol + '://' + api.server + ':' + api.port + api.registerUrl;
+var apiGetTrainStations = apiUrl + api.getTrainStations;
+var apiGetglobalSections = apiUrl + api.getGlobalSections;
+var apiGetPlanSections = apiUrl + api.getPlanSections;

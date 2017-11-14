@@ -234,6 +234,7 @@ gulp.task('build-connect', function () {
         root: 'public',
         livereload: true,
         port: process.env.PORT || 8888,
+        host: '192.168.1.101',
         debug: false
     });
     // connect.serverClose(); // run some headless tests with phantomjs 
@@ -242,14 +243,25 @@ gulp.task('build-connect', function () {
 
 gulp.task('browser-sync', function () {
     browserSync.init({
-       // port: 8888,   /// don't change the default port otherwise bowser will behaving in a different way
+        ui: false,
+        port: 8989,   
+        reloadDebounce: 1000,
+        host: 'localhost',
         server: {
             baseDir: "public",
+        },
+        socket: {
+            domain: 'localhost:8989'
+        },
+        middleware: function (req, res, next) {
+            res.setHeader('Access-Control-Allow-Origin', '*')
+            next()
         },
         watchOptions: {
             ignoreInitial: true,
             ignored: '*.txt'
         },
+        /// proxy: 'http://192.12.344.45:3000' // we can't use proxy and server both
 
     });
 });
